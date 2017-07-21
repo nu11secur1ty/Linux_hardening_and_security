@@ -5,7 +5,7 @@
 
 -----------------------------------------------------------------------------------------------------
 - NOTE:
-# SUSE - cat /proc/sys/kernel/cap_last_cap =) !-permissions ("chattr") nes ARC system_D {so beautifully =)}!
+# SUSE - cat /proc/sys/kernel/cap_last_cap =) !-permissions ("chattr") newest Linux_ARC system_D {so beautifully =)}!
 # For others OS you have to check!
 ```
 $ cat /proc/sys/kernel/cap-bound
