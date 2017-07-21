@@ -3,8 +3,13 @@
 
 # How to See Default or Current Capability Values?
 
+-----------------------------------------------------------------------------------------------------
+- NOTE:
+# SUSE - cat /proc/sys/kernel/cap_last_cap 
+# For others OS you have to check =)
 ```
 $ cat /proc/sys/kernel/cap-bound
+$ cat /proc/sys/kernel/cap_last_cap  # on SUSE
 ```
 # How Do I Set New Capability Values?
 
