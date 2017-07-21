@@ -12,7 +12,7 @@
    make mrproper
    make menuconfig
 ```   
-   in  [*] Enable loadable module support  --->  
+   [*] Enable loadable module support  --->  
    
      ───────────── Enable loadable module support ────────
   │ CONFIG_MODULES:                                                                                                                                                                                              
