@@ -1,11 +1,15 @@
-1. Install packages:
-   zypper in gcc
-   zypper in make 
-   zypper in ncurses-devel
+# Install packages:
 
-# Commands: 
+```
+zypper in gcc
+zypper in make 
+zypper in ncurses-devel
+```
+# Commands:
+```
    make mrproper
    make menuconfig
+```
    in  [*] Enable loadable module support  --->   
  
   save and exit:  
@@ -27,7 +31,7 @@
   │                            
    - 
 
-   # Stop loading modules.
+   # Stop loading modules after preparing the kernel.
    [ ]   Forced module loading 
 
     ┌───────────────── Forced module loading ────────
