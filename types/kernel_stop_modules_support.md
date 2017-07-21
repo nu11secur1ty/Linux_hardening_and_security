@@ -2,14 +2,16 @@
 
 ------------------------------------------------------------------
 # Install packages:
+```
    zypper in gcc
    zypper in make 
    zypper in ncurses-devel
-
+```
 # Commands: 
+```
    make mrproper
    make menuconfig
-   
+```   
    in  [*] Enable loadable module support  --->  
    
      ───────────── Enable loadable module support ────────
@@ -40,12 +42,12 @@
  # Configure your kernel =)
  
    save and exit:  
-
+```
 
     make bzImage
     make modules
     make modules_install
-
+```
   - WARNING NOTE:   
 
    # Stop loadable module support.
@@ -76,9 +78,9 @@
   │ Type  : boolean                                                                                                                                                                                              
   │ Prompt: Enable loadable module support                                                                                                                                                                       
   │   Defined at init/Kconfig:1950 
-
+```
     make install
-
+```
   # Feel secure with nu11secur1ty.
 
 
