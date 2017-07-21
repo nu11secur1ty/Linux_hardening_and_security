@@ -50,7 +50,11 @@
 ```
   - WARNING NOTE:   
 
-   # Stop loadable module support.
+   # Stop loadable module support, after your configuration is finished.
+   
+   ```
+   make menuconfig
+   ```
    [ ] Enable loadable module support  ----  
 
 
@@ -78,6 +82,9 @@
   │ Type  : boolean                                                                                                                                                                                              
   │ Prompt: Enable loadable module support                                                                                                                                                                       
   │   Defined at init/Kconfig:1950 
+  
+# Save and exit:
+- Then install the kernel:
 ```
     make install
 ```
