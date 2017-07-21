@@ -11,7 +11,7 @@
 $ cat /proc/sys/kernel/cap-bound
 $ cat /proc/sys/kernel/cap_last_cap  # on SUSE
 ```
-# How Do I Set New Capability Values?
+# How to Set New Capability Values?
 
 
 ```
