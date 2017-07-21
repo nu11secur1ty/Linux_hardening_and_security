@@ -1,4 +1,4 @@
-# Test on CentOS Linux.
+# Test on Linux CentOS 7
 
 ------------------------------------------------------------------
 # Install packages:
