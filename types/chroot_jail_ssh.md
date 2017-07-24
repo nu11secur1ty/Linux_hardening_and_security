@@ -1,5 +1,5 @@
 # Creating a Chroot Jail for SSH Access
-
+![](https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/photo/ssh.jpg)
 # Setup your user "user"
 
 - So we must setup the group, then add the user. 
