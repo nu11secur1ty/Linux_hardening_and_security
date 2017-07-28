@@ -138,7 +138,7 @@ grep '#define CAP' /usr/src/linux/include/linux/capability.h
 $ man 7 capabilities
 ```
 
-# Have fun with nu11secur1ty.
+# Feel secure with nu11secur1ty.
 
 
 
