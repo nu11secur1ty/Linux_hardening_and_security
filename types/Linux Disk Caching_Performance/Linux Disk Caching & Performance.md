@@ -37,7 +37,7 @@ $ cat /proc/vmstat | egrep "dirty|writeback"
  nr_writeback_temp 0
 ```
 
-In this case here have 878 dirty pages waiting to be written to disk.
+In this case here we have a 878 dirty pages waiting to be written to disk.
 
 # Approach 1: Decreasing the Cache
 
