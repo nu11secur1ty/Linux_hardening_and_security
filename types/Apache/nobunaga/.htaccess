@@ -147,6 +147,6 @@
 
 ###################################################
 
-# Kris Yanakiev web-developer
+# Kristiyan Yanakiev @ web-developer
 RewriteRule ^thumb([0-9]+)\.(png|jpg|gif|svg|pic)$    /viewimage.php?id=$1&format=$2&thumb=1 [NC,L]
 RewriteRule ^image([0-9]+)\.(png|jpg|gif|svg|pic)$    /viewimage.php?id=$1&format=$2 [NC,L]
