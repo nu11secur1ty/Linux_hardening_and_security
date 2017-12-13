@@ -1,3 +1,5 @@
+![image](https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/types/SSL/wall/ssl.png)
+
 # Secure your transport headers in your .htaccess file
 ```
 RewriteEngine On 
