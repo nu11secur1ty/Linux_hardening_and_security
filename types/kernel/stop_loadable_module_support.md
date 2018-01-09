@@ -41,7 +41,7 @@
  
  # Configure your kernel =)
  
-   save and exit:  
+   save and exit and continue...  
 ```
 
     make bzImage
