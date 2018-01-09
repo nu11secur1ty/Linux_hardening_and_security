@@ -10,7 +10,7 @@ ssh-keygen -t rsa -b _your_bit_key
 ```
 cat ~/.ssh/id_rsa.pub | ssh user@x.x.x.x "mkdir -p ~/.ssh && cat >>  ~/.ssh/authorized_keys"
 ```
-# Adding the next key on the client machine
+# Adding the next key on the client machine if you already have it him somewhere on this machine.
 
 ```
 echo -e "_your_key_" >> ~/.ssh/authorized_keys
