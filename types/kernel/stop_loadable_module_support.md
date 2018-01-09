@@ -50,7 +50,7 @@
 ```
   - WARNING NOTE:   
 
-   # Stop loadable module support, after your configuration is finished.
+   # Stop loadable module support, after your configuration and modules installation, is finished.
    
    ```
    make menuconfig
