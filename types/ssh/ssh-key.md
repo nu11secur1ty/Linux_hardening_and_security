@@ -3,6 +3,8 @@
 ```
 ssh-keygen -t rsa -b _your_bit_key
 ```
+- IMPORTANT: BETTER USE "-b" (above 5000) 
+
 # Export and create a file "authorized_keys" if you don't have it
 
 ```
