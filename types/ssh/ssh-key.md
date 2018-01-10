@@ -16,6 +16,19 @@ cat ~/.ssh/id_rsa.pub | ssh user@x.x.x.x "mkdir -p ~/.ssh && cat >>  ~/.ssh/auth
 echo -e "_your_key_" >> ~/.ssh/authorized_keys
 ```
 
+
+# Permit root login
+
+- Change the following :
+```
+vim /etc/ssh/sshd_config
+
+```
+```
+PasswordAuthentication no
+PermitRootLogin without-password
+```
+
 # Restart your ssh server
 
 ```
