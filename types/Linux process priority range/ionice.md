@@ -27,16 +27,34 @@ The RT scheduling class is given first access to the disk, regardless of what el
 
 -c, --class class
     Specify the name or number of the scheduling class to use; 0 for none, 1 for realtime, 2 for best-effort, 3 for idle. 
+
+
+
 -n, --classdata level
     Specify the scheduling class data. This only has an effect if the class accepts an argument. For realtime and best-effort, 0-7 are valid data (priority levels). 
+
+
+
 -p, --pid PID...
     Specify the process IDs of running processes for which to get or set the scheduling parameters. 
+    
+
+
 -t, --ignore
     Ignore failure to set the requested priority. If command was specified, run it even in case it was not possible to set the desired scheduling priority, which can happen due to insufficient privileges or an old kernel version. 
+
+
+
 -h, --help
     Display help and exit. 
+
+
+
 -V, --version
     Display version information and exit. 
+
+
+
 
 # EXAMPLES
 ```
