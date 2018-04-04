@@ -1,3 +1,5 @@
+
+
 The Linux kernel implements two separate priority ranges.
 
 The first is the nice value, a number from –20 to 19 with a default of zero. Larger nice values correspond to a lower priority (you are being nice to the other processes on the system). Processes with a lower nice value (higher priority) run before processes with a higher nice value (lower priority). The nice value also helps determine how long a processor timeslice the process receives. A process with a nice value of –20 receives the maximum timeslice, whereas a process with a nice value of 19 receives the minimum timeslice. Nice values are the standard priority range used in all Unix systems.
@@ -15,3 +17,28 @@ This kind applies only to conventional processes (non realtime processes)
 Processes have an initial priority specified as the nice value. This value is stored in the static_prio member of the process’s task_struct. The value is called the static priority because it does not change from what the user specifies. The scheduler, in turn, bases its decisions on the dynamic priority that is stored in prio. The dynamic priority is calculated as a function of the static priority and the task’s interactivity
 
 The static priority of a real-time process is always higher than the dynamic priority of a conventional one: the scheduler will start running conventional processes only when there is no real-time process in a TASK_RUNNING state.
+
+# Check with the ps command to find processes priority of Apache2
+```
+ps -eo pid,rtprio,ni,pri,comm |grep httpd
+```
+# Output
+```
+  5151      -   0  19 /usr/sbin/httpd
+  5158      -   0  19 /usr/sbin/httpd
+  5159      -   0  19 /usr/sbin/httpd
+  5161      -   0  19 /usr/sbin/httpd
+  5162      -   0  19 /usr/sbin/httpd
+  5163      -   0  19 /usr/sbin/httpd
+  5379      -   0  19 /usr/sbin/httpd
+```
+# Check with the ps command to find all processes priority of your Linux
+```
+ps -eo pid,rtprio,ni,pri,comm 
+```
+# output
+```
+This is not your business ;)
+```
+
+
