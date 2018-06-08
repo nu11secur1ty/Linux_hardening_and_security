@@ -6,8 +6,8 @@ passwd --delete username
 ```bach
 cat -n /etc/passwd
 ```
-# Delete line which you must remove
+# Delete line which you must remove using "sed"
 ```bash
-ed -i.bak -e '_your num"d"_' /your/file
-ed -i.bak -e '38' /etc/passwd
+sed -i.bak -e '_your num"d"_' /your/file
+sed -i.bak -e '38' /etc/passwd
 ```
