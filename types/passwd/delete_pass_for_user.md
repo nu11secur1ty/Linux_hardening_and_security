@@ -20,6 +20,7 @@ rm /var/mail/_user_name
 cat /etc/passwd | grep _your_user
 ```
 
+                                *** CREATE USER AND PASS WITHOUT LOOSING DATA ***
 -------------------------------------------------------------------------------------
 
 # Create password for your again without home dir:
