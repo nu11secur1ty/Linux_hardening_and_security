@@ -4,7 +4,7 @@
 ```bash
 passwd --delete username
 ```
-# Check line number from ***/etc/passwd*** and search you number ;)
+# Check line number from ***/etc/passwd*** and search your number ;)
 ```bach
 cat -n /etc/passwd
 ```
