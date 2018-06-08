@@ -32,3 +32,13 @@ useradd gancho
 ```bash
 passwd _your_username
 ```
+# Check again if password existing
+```bash
+cat /etc/passwd | grep _user_
+```
+- Output must be
+```bash
+_user_:x:1001:100::/home/_user_:/bin/bash
+```
+
+# Feel sec, with nu11secur1ty ;)
