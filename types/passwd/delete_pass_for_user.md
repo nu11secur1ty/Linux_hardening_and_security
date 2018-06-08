@@ -22,7 +22,11 @@ cat /etc/passwd | grep _your_user
 
 -------------------------------------------------------------------------------------
 
-# Create password again:
+# Create password for your again without home dir:
+```bash
+useradd gancho
+```
+# Give to him  a password
 ```bash
 passwd _your_username
 ```
