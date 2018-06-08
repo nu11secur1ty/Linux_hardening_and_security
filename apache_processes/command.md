@@ -6,4 +6,4 @@ ps auxw | grep bin/apache | awk '{print"-p " $2}'
 ```bash
 ps auxw | grep sbin/httpd | awk '{print"-p " $2}' | xargs strace
 ```
-- NOTE: After checking is finished you must restart your Apache2 webserver
+- **NOTE:** After checking is finished you must restart your Apache2 webserver
