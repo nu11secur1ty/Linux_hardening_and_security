@@ -32,15 +32,16 @@ useradd gancho
 ```
 # Give to him  a password
 ```bash
-passwd _your_username
+passwd gancho
 ```
 # Check again if password existing
 ```bash
-cat /etc/passwd | grep _user_
+cat /etc/passwd | grep gancho
 ```
 - Output must be
 ```bash
-_user_:x:1001:100::/home/_user_:/bin/bash
+gancho:x:1001:100::/home/gancho:/bin/bash
 ```
+# ***NOTE: This user*** gancho ***is the same, and hi have already*** home directory
 
 # Feel sec, with nu11secur1ty ;)
