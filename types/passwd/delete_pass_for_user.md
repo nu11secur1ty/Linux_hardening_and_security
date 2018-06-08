@@ -42,6 +42,6 @@ cat /etc/passwd | grep gancho
 ```bash
 gancho:x:1001:100::/home/gancho:/bin/bash
 ```
-# ***NOTE: This user*** gancho ***is the same, and hi have already*** home directory
+# ***NOTE: This user*** gancho ***is the same, and he has it already a*** home***directory!***
 
 # Feel sec, with nu11secur1ty ;)
