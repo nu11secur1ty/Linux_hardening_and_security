@@ -13,7 +13,7 @@ cat -n /etc/passwd
 sed -i.bak -e '_your num"d"_' /your/file
 sed -i.bak -e '38d' /etc/passwd
 ```
-# Clean ***/var/mail/_your_user_
+# Clean ***/var/mail/_your_user_***
 ```bash
 rm /var/mail/_user_name
 ```
