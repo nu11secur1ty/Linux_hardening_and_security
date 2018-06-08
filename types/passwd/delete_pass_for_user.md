@@ -1,6 +1,6 @@
 ![](https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/types/passwd/password.jpg)
 
-# Command to delete user password under Linux
+# Delete user password
 ```bash
 passwd --delete username
 ```
