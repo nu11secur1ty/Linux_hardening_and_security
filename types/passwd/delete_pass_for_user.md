@@ -11,3 +11,7 @@ cat -n /etc/passwd
 sed -i.bak -e '_your num"d"_' /your/file
 sed -i.bak -e '38' /etc/passwd
 ```
+# Check if user pass is exist
+```bash
+cat /etc/passwd | grep _your_user
+```
