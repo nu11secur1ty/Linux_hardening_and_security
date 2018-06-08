@@ -19,3 +19,10 @@ rm /var/mail/_user_name
 ```bash
 cat /etc/passwd | grep _your_user
 ```
+
+-------------------------------------------------------------------------------------
+
+# Create password again:
+```bash
+passwd _your_username
+```
