@@ -14,7 +14,7 @@ AuthName "Password Protected Area"
 AuthUserFile /etc/apache2/.htpasswd
 Require valid-user
 ########################################
-# Allow .log files to view from browser
+# Allow .log files to view from the browser
 <Files ~ "\.log$">
     Order allow,deny
     #Deny from all
