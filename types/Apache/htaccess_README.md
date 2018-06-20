@@ -6,7 +6,7 @@
      Deny from all
 </Files>
 ```
-# Allow reading logs from the browser using .htaccess in exactly node directory.
+# Allow reading logs from the browser using .htaccess in exactly node directory, and protect this area with ***htpasswd***
 ```bash 
 # Web HTaccess
 AuthType Basic
