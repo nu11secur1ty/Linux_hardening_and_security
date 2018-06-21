@@ -15,7 +15,7 @@ AuthUserFile /etc/apache2/.htpasswd
 Require valid-user
 ########################################
 # Allow .log files to view from the browser
-<Files ~ "\.log">
+<Files ~ "^\.log">
     Order allow,deny
     #Deny from all
     Allow from all
