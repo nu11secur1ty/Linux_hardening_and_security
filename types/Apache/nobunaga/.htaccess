@@ -130,6 +130,31 @@ Header always set Content-Security-Policy "default-src https: data: 'unsafe-inli
 #</IfModule>
 
 
+# More HEADER SECURITY
+# Note: instead of adding your own configuration here, consider 
+#       adding it in your own file (/etc/apache2/httpd.conf.local)
+#       putting its name into APACHE_CONF_INCLUDE_FILES in 
+#       /etc/sysconfig/apache2 -- this will make system updates 
+#       easier :) 
+
+
+# Nikto issue
+#<filesMatch "\.(php)$">
+#Header always append X-Frame-Options DENY
+#</filesMatch>
+#FileETag None
+#Header unset ETag
+
+
+# X.. Protection
+#   TraceEnable off
+#   ServerSignature Off
+#   ServerTokens Prod
+# Header always append X-Frame-Options SAMEORIGIN
+# Header set X-Content-Type-Options "nosniff"
+# Header always set X-XSS-Protection "1; mode=block"
+# Header set X-XSS-Protection: 1
+
 
 # WARNING! DO NOT EDIT THIS PART!!!
 
