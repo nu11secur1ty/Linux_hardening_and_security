@@ -61,7 +61,7 @@ RET (return) address: Return address is basically the address to which the flow 
 Stack Frame: A stack frame is a region on stack which contains all the function parameters, local variables, return address, value of instruction pointer at the time of a function call.
 
 Okay, so now lets see the stack closely by executing a C program. For this blog post we will be using the program challenge ‘stack0’ from Protostar exploit series, which is a stack based buffer overflow challenge series.
-You can find more about Protostar exploit series here -> https://exploit-exercises.com/protostar/
+
 
 The program:
 
