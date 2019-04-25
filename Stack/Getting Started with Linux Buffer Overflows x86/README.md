@@ -1,3 +1,6 @@
+![](https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/Stack/Getting%20Started%20with%20Linux%20Buffer%20Overflows%20x86/wall/overflow1.png)
+
+
 Hello Friends, this series of blog posts will purely focus on Buffer Overflows. When I started my journey in Infosec, this one topic fascinated me as much as it frightened me. When I read some of the blogs related to Buffer Overflows, it really seemed as some High-level gibber jabber containing C code, Assembly and some black terminals (Yeah I am talking about GDB). Over the period of time and preparing for OSCP, I started to learn about Buffer Overflows in detail referring to the endless materials on Web scattered over different planets. So, I will try to explain Buffer Overflow in depth and detail so everyone reading this blog can understand what actually a Buffer Overflow is.
 
 In this blog, we will understand the basic fundamentals behind the Buffer Overflow vulnerability. Buffer Overflow is a memory corruption attack which involves memory, stack, buffers to name a few. We will go through each of this and understand why really Buffer Overflows takes place in the first place. We will focus on 32-bit architecture.
