@@ -94,6 +94,49 @@ Lets make this happen!!!
 
 ![](https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/Stack/Linux%20Buffer%20Overflows%20x86%20%E2%80%93%20Part%202%20(%20Overwriting%20and%20manipulating%20the%20RETURN%20address)/wall/4.png)
 
+From the previous blog, we came to know about the stack layout. We can see how the top of the stack is aligned, 8 bytes for the buffer, 4 bytes for the EBP, 4 bytes for the RET address and so on (If there is a value passed as parameter in a function then it gets pushed first onto the stack when the function is called).
+
+-> When the function() is called, first the RET address gets pushed onto the stack so the program flow can be maintained after the execution of function().
+
+->Then the EBP gets pushed onto the stack, so the EBP can act as the offset reference point for other instructions to access and calculate the memory addresses.
+
+-> We have char array buffer of 5 bytes, but the memory is allocated in terms of WORD. Basically 1 word=4 bytes. Even if you declare a variable or array of 2 bytes it will be allocated as 4 bytes or 1 word. So, here 5 bytes=2 words i.e 8 bytes.
+
+
+![](https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/Stack/Linux%20Buffer%20Overflows%20x86%20%E2%80%93%20Part%202%20(%20Overwriting%20and%20manipulating%20the%20RETURN%20address)/wall/5.png)
+
+
+-> So, in our case when inside the function(), the stack will probably be setup as buffer + EBP + RET
+
+-> Now we know that after 12 bytes, the flow of the program will return to main() and the instruction random = 1; will be executed. We want to skip past this instruction by manipulating the RET address to somehow point to the address after 0x0804843c.
+
+->We will now try to manipulate the RET address by doing something like below :-
+
+```c
+int *ret;
+
+ret = buffer + 12;
+```
+
+Here, we are introducing an int pointer ret, and we are assigning it the starting address of buffer + 12 .i.e (wait lets see this in a diagram)
+
+![](https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/Stack/Linux%20Buffer%20Overflows%20x86%20%E2%80%93%20Part%202%20(%20Overwriting%20and%20manipulating%20the%20RETURN%20address)/wall/6.png)
+
+
+-> So, the ret pointer now ends exactly at the start where the return value is actually stored. Now, we just want to add ret pointer with some value which will change the return value in such a manner that it will skip past the return = 1; instruction.
+
+Lets just go back to the disassembled main function and calculate how much we have to add to the ret pointer to actually skip past the assignment instruction.
+
+
+![](https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/Stack/Linux%20Buffer%20Overflows%20x86%20%E2%80%93%20Part%202%20(%20Overwriting%20and%20manipulating%20the%20RETURN%20address)/wall/7.png)
+
+
+
+-> So, we already know we want to skip pass the instruction at address 0x0804843c to address 0x08048443. By subtracting these two address we get 7. So we will add 7 to the return address so that it will point to the instruction at address 0x08048443.
+
+![](https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/Stack/Linux%20Buffer%20Overflows%20x86%20%E2%80%93%20Part%202%20(%20Overwriting%20and%20manipulating%20the%20RETURN%20address)/wall/8.png)
+
+
 
 
 
