@@ -68,6 +68,34 @@ In GDB, first we disassemble the main function and look where the flow of the pr
 
 ![](https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/Stack/Linux%20Buffer%20Overflows%20x86%20%E2%80%93%20Part%202%20(%20Overwriting%20and%20manipulating%20the%20RETURN%20address)/wall/2.png)
 
+-> At the address 0x08048430, we can see the value ‘0’ is assigned to random.
+
+-> Then at the address 0x08048437 the function() is called and the flow is redirected to the actual place where the function() resides in memory at 0x804840b address.
+
+-> After the execution of function() is complete, it returns the flow to the main() and the next instruction which gets executed is the assignment of value ‘1’ to random which is at address 0x0804843c.
+
+->If we want to skip past the instruction random=1; then we have to redirect the flow of program from 0x08048437 to 0x08048443. i.e after the completion of function() the EIP should point to 0x08048443 instead of 0x0804843c.
+
+To achieve this, we will make some slight modifications to the function(), so that the return address should point to the instruction which directly prints the random variable as ‘0’.
+
+Lets take a look at the execution of the function() and see where the EIP points.
+
+
+![](https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/Stack/Linux%20Buffer%20Overflows%20x86%20%E2%80%93%20Part%202%20(%20Overwriting%20and%20manipulating%20the%20RETURN%20address)/wall/3.png)
+
+
+-> As of now there is only a char array of 5 bytes inside the function(). So, nothing important is going on in this function call.
+
+-> We set a breakpoint at function() and step through each instruction to see what the EIP points after the function() is exectued completely.
+
+-> Through the command info regsiters eip we can see the EIP is pointing to the address 0x0804843c which is nothing but the instruction random=1;
+
+Lets make this happen!!!
+
+![](https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/Stack/Linux%20Buffer%20Overflows%20x86%20%E2%80%93%20Part%202%20(%20Overwriting%20and%20manipulating%20the%20RETURN%20address)/wall/4.png)
+
+
+
 
 
 
