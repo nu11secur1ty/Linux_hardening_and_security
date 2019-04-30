@@ -344,7 +344,11 @@ python -c 'print "A" * 64 + "\x6b\x84\x04\x08"' | ./stack3
 ![](https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/Stack/Linux%20Buffer%20Overflows%20x86%20%E2%80%93%20Part%202%20(%20Overwriting%20and%20manipulating%20the%20RETURN%20address)/wall/stack3_overflow_success-768x96.png)
 
 
+As we can see the win() function is successfully executed. The EIP is also pointing the address of win().
 
+Hence, we have successfully overwritten the return address and exploited the buffer overflow vulnerability.
+
+Thats all for this blog. I am sorry but this blog also went quite long, but I will try to keep the next blog much shorter. And also, in the next blog we will try to play with shellcode.
 
 
 
