@@ -48,4 +48,12 @@ printf("The value of random is: %d\n",random);
 }
 ```
 
+This is a very simple program where the variable random is assigned a value ‘0’, then a function named function is called, the flow is transferred to the function() and it returns to the main() after executing its instructions. Then the variable random is assigned a value ‘1’ and then the current value of random is printed on the screen.
+
+Simple program, we already know its output i.e 1.
+
+![](https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/Stack/Linux%20Buffer%20Overflows%20x86%20%E2%80%93%20Part%202%20(%20Overwriting%20and%20manipulating%20the%20RETURN%20address)/wall/1.png)
+
+
+
 
