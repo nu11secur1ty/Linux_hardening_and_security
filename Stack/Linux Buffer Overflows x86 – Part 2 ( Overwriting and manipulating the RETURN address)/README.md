@@ -54,6 +54,19 @@ Simple program, we already know its output i.e 1.
 
 ![](https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/Stack/Linux%20Buffer%20Overflows%20x86%20%E2%80%93%20Part%202%20(%20Overwriting%20and%20manipulating%20the%20RETURN%20address)/wall/1.png)
 
+But, what if we want to skip the instruction random=1; ?
+
+That means, when the function() call returns to the main(), it will not perform the assignment of value ‘1’ to random and directly print the value of random as ‘0’.
+
+So how can we achieve this?
+
+Lets fire up GDB and see how the stack looks like for this program.
+
+(I won’t be explaining each and every instruction, I have already done this in the previous blog. I will only go through the instructions which are important to us. For better understanding of how the stack is setup, refer to the previous blog.)
+
+In GDB, first we disassemble the main function and look where the flow of the program is returned to main() after the function() call is over and also the address where the assignment of value ‘1’ to random takes place.
+
+
 
 
 
