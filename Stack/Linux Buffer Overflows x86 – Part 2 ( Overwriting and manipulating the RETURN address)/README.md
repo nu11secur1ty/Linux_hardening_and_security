@@ -66,6 +66,9 @@ Lets fire up GDB and see how the stack looks like for this program.
 
 In GDB, first we disassemble the main function and look where the flow of the program is returned to main() after the function() call is over and also the address where the assignment of value ‘1’ to random takes place.
 
+![](https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/Stack/Linux%20Buffer%20Overflows%20x86%20%E2%80%93%20Part%202%20(%20Overwriting%20and%20manipulating%20the%20RETURN%20address)/wall/2.png)
+
+
 
 
 
