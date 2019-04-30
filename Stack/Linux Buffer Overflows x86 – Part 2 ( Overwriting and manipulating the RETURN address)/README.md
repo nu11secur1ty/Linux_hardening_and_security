@@ -21,3 +21,31 @@ We will use a simple program to manipulate its intended output by changing the R
 (The following example is same as the AlephOne’s famous article on Stack Smashing with some modifications for a better and easy understanding)
 
 Program:
+
+```c
+void function()
+
+{
+
+char buffer[5]= “ABCDE”;
+
+}
+
+void main()
+
+{
+
+int random;
+
+random = 0;
+
+function();
+
+random = 1;
+
+printf("The value of random is: %d\n",random);
+
+}
+```
+
+
