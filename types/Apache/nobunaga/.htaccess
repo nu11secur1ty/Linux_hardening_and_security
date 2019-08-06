@@ -103,7 +103,7 @@ Header always set Content-Security-Policy "default-src https: data: 'unsafe-inli
   # Mozilla developers
   Header always set X-Frame-Options SAMEORIGIN
   Header set X-Frame-Options DENY
-  Header set X-Frame-Options "ALLOW-FROM https://example.com/"
+  Header set X-Frame-Options "ALLOW-FROM https://your_domain.com/"
   #-----------------------------------------
   
 </IfModule>
