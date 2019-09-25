@@ -7,14 +7,14 @@ TraceEnable off
 ```bash
 $ curl -X TRACE 127.0.0.1
 ```
-- if you are not setup correct, you should see this:
+- If you are not set up correctly, you should see this:
 ```bash
 TRACE / HTTP/1.1
 User-Agent: curl/7.24.0 (x86_64-apple-darwin12.0) libcurl/7.24.0 OpenSSL/0.9.8r zlib/1.2.5
 Host: 127.0.0.1
 Accept: */*
 ```
-- If everything is ok you shoul see:
+- If everything is ok you should see:
 ```bash
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
 <html><head>
