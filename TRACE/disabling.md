@@ -1,5 +1,5 @@
 # Disable TRACE method
-- in `httpd.conf` add this line
+- in your `httpd.conf` add this line
 ```bash
 TraceEnable off
 ```
