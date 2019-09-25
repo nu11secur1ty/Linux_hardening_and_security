@@ -1,5 +1,5 @@
 #
-# Makefile for the kernel security code
+# Makefile for the kernel security code, test mode by nu11secur1ty
 #
 
 obj-$(CONFIG_KEYS)			+= keys/
