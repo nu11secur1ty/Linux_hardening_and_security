@@ -186,7 +186,7 @@ source security/tomoyo/Kconfig
 source security/apparmor/Kconfig
 
 source security/integrity/ima/Kconfig
-source security/ptlsm/Kconfig
+source security/nu11SLMpty/Kconfig
 
 choice
 	prompt "Default security module"
