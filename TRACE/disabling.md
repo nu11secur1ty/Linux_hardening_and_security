@@ -1,5 +1,10 @@
 # Disable TRACE method
-- in your `httpd.conf` add this line
+-Find whereis your `httpd.conf` or `apach2.conf`
+```bash
+find /etc/apache2/ -type f -name httpd.conf
+find /etc/apache2/ -type f -name apache2.conf
+```
+- in your `httpd.conf` or `apache2.conf` add this line
 ```bash
 TraceEnable off
 ```
