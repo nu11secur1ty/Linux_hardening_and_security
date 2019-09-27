@@ -1,1 +1,1 @@
-# Kernel Secur1ty Modules by nu11secur1ty
+# Linux Security modules by nu11secur1ty
