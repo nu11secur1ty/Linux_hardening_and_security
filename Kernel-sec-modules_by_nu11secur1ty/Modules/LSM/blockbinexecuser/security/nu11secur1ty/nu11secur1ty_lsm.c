@@ -24,7 +24,7 @@
  * that for you, in a simple way.
  *
  * Steve
- * Editor: V.Varbanovski
+ * Modified and development: V.Varbanovski
  * --
  *
  */
