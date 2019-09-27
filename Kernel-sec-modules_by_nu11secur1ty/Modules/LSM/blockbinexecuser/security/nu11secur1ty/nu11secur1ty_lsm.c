@@ -7,7 +7,7 @@
  * To set a program as nu11secur1tyted you must add a label to the target,
  * for example:
  *
- *     setfattr -n security.nu11secur1ty -v 3 /bin/bash
+ *     setfattr -n security.nu11secur1ty -v 3 /bin/dash
  *
  * To confirm there is a label present you can use the dump option:
  *
