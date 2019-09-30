@@ -25,6 +25,7 @@
  * should be permitted, otherwise it will be denied.
  *
  * Steve
+ * Modified and development: V.Varbanovski
  * --
  *
  */
