@@ -1,4 +1,4 @@
-*
+*/
  * @file    hello.c
  * @author  V.Varbanovski
  * @date    30.09.2019
