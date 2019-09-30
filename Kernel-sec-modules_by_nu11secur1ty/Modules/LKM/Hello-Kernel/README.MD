@@ -1,4 +1,4 @@
-# Installing the test Hello Kernel module
+# Installing the test Hello Kernel module on OpenSuse-leap 15
 - Get the source:
 ----------------------------------------------------------------------------------------------------------
 1. - The Makefile
