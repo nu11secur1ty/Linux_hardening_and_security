@@ -1,4 +1,4 @@
-# Installing the test Hello Kernel module on OpenSuse-leap 15
+# Installing the test Hello Kernel module on OpenSuse leap15
 - Get the source:
 ----------------------------------------------------------------------------------------------------------
 1. - The Makefile
@@ -9,9 +9,10 @@ wget https://raw.githubusercontent.com/nu11secur1ty/Linux_hardening_and_security
 ```bash
 wget https://raw.githubusercontent.com/nu11secur1ty/Linux_hardening_and_security/master/Kernel-sec-modules_by_nu11secur1ty/Modules/LKM/Hello-Kernel/hello.c
 ```
-3. - The Headers, if you needet
+3. - The Linux Headers, if you need.
 ```bash
 wget https://github.com/nu11secur1ty/Linux_hardening_and_security/raw/master/Kernel-sec-modules_by_nu11secur1ty/Modules/LKM/Hello-Kernel/kernel-headers-5.0.9-300.fc30.x86_64.rpm
+rpm -Uvh kernel-headers-5.0.9-300.fc30.x86_64.rpm
 ```
 ----------------------------------------------------------------------------------------------------------
 - Installing
