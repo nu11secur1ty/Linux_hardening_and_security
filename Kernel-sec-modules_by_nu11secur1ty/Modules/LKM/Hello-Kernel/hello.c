@@ -1,5 +1,5 @@
 /**
- * @file    hello.c
+ * @file    nu11secur1ty.c
  * @author  Ventsislav Varbanovski
  * @date    30.09.2019
  * @version 0.1
@@ -28,8 +28,8 @@ MODULE_PARM_DESC(name, "The name to display in /var/log/kern.log");  ///< parame
  *  time and that it can be discarded and its memory freed up after that point.
  *  @return returns 0 if successful
  */
-static int __init helloBBB_init(void){
-   printk(KERN_INFO "EBB: Hello %s from the BBB LKM!\n", name);
+static int __init nu11secur1tyBBB_init(void){
+   printk(KERN_INFO "EBB: nu11secur1ty %s from the BBB LKM!\n", name);
    return 0;
 }
 
@@ -37,7 +37,7 @@ static int __init helloBBB_init(void){
  *  Similar to the initialization function, it is static. The __exit macro notifies that if this
  *  code is used for a built-in driver (not a LKM) that this function is not required.
  */
-static void __exit helloBBB_exit(void){
+static void __exit nu11secur1tyBBB_exit(void){
    printk(KERN_INFO "EBB: Goodbye %s from the BBB LKM!\n", name);
 }
 
@@ -45,5 +45,5 @@ static void __exit helloBBB_exit(void){
  *  identify the initialization function at insertion time and the cleanup function (as
  *  listed above)
  */
-module_init(helloBBB_init);
-module_exit(helloBBB_exit);
+module_init(nu11secur1tyBBB_init);
+module_exit(nu11secur1tyBBB_exit);
