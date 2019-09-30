@@ -2,7 +2,7 @@
  * @file    hello.c
  * @author  Ventsislav Varbanovski
  * @date    30.09.2019
- * @version 1
+ * @version 0.1
  * @brief  An introductory "Hello Kernel!" loadable kernel module (LKM) that can display a message
  * in the /var/log/kern.log file when the module is loaded and removed. The module can accept an
  * argument when it is loaded -- the name, which appears in the kernel log files.
@@ -16,7 +16,7 @@
 MODULE_LICENSE("GPL");              ///< The license type -- this affects runtime behavior
 MODULE_AUTHOR("Ventsislav Varbanovski");      ///< The author -- visible when you use modinfo
 MODULE_DESCRIPTION("A simple Linux driver for the BBB.");  ///< The description -- see modinfo
-MODULE_VERSION("1");                ///< The version of the module
+MODULE_VERSION("0.1");                ///< The version of the module
 
 static char *name = "Kernel";        ///< An example LKM argument -- default value is "Kernel"
 module_param(name, charp, S_IRUGO); ///< Param desc. charp = char ptr, S_IRUGO can be read/not changed
