@@ -15,6 +15,15 @@ wget https://github.com/nu11secur1ty/Linux_hardening_and_security/raw/master/Ker
 ```
 ----------------------------------------------------------------------------------------------------------
 - Installing
+  - - packages which you need from Yast
+```bash
+Base Development                                          
+C/C++ Development                                                                                    
+RPM Build Environment                                                                    
+Linux Kernel Development 
+```
+- applay
+
 ```bash
 cd /path/to/your/module/
 make
