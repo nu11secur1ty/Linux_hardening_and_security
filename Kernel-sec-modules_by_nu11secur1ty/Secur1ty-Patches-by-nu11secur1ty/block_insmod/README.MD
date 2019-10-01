@@ -190,4 +190,6 @@ index c33a1ed..37b7964 100644
  #endif
  #ifdef CONFIG_HOTPLUG
 ```
+[More:](https://xorl.wordpress.com/2018/02/17/lkm-loading-kernel-restrictions/?fbclid=IwAR2Sa4CaS0l1jOVNzngk1G6pvLdC7LexrIuK8wNQNvDEFWmUInicVfuG1cs)
+
 # BR nu11secur1ty
