@@ -3,6 +3,6 @@
 ```bash
 ./nu11secur1ty
 ```
-- .This Patch is for stopping of load LKM Linux Modules when the user decides to play with Linux Kernel. NOTE:  Tested only on Linux OS Opensuse Leap 15
+- .This patch is for stopping of load LKM Linux Modules when the user decides to play with Linux Kernel. Or to block attacker to execute some rootkit malicious software on your system! NOTE:  Tested only on Linux OS Opensuse Leap 15 
 
 # BR nu11secur1ty
