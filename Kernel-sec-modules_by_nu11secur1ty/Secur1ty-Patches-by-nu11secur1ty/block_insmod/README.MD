@@ -29,6 +29,8 @@ sysctl may not be changed from that point forward.  This is designed to
 provide protection against kernel module rootkits.
 
 Signed-off-by: Dan Rosenberg <drosenberg@vsecurity.com>
+
+```
 ---
  Documentation/sysctl/kernel.txt |   16 +++++++++-------
  include/linux/module.h          |    5 ++++-
@@ -187,5 +189,5 @@ index c33a1ed..37b7964 100644
  	},
  #endif
  #ifdef CONFIG_HOTPLUG
-
+```
 # BR nu11secur1ty
