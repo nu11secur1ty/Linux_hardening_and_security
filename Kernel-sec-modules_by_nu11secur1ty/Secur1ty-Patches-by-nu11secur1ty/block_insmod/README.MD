@@ -4,7 +4,8 @@
 ./nu11secur1ty
 ```
 - .This patch is for stopping of load LKM Linux Modules when the user decides to play with Linux Kernel. Or to block attacker to execute some rootkit malicious software on your system! NOTE:  Tested only on Linux OS Opensuse Leap 15 
-
+- Documentation:
+-----------------------------------------------------------------------
 A significant portion of kernel vulnerabilities do not affect core code,
 but rather individual modules.  Unfortunately, there is no global kernel
 setting to restrict unprivileged users from triggering the automatic
