@@ -6,9 +6,9 @@ BR `nu11secur1ty`
 -------------------------------------------------------------------------------------------------------------------------
 - module
 ```bash
-https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/Kernel-sec-modules_by_nu11secur1ty/linux-5.3.2/kernel/module.c#L971
+https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/Kernel-sec-modules_by_nu11secur1ty/linux-5.1.1/kernel/module.c#L290
 ```
 - sysctl
 ```bash
-https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/Kernel-sec-modules_by_nu11secur1ty/linux-5.3.2/kernel/sysctl.c#L714
+https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/Kernel-sec-modules_by_nu11secur1ty/linux-5.1.1/kernel/sysctl.c#L705
 ```
