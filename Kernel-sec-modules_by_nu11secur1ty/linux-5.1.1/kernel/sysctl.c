@@ -699,7 +699,8 @@ static struct ctl_table kern_table[] = {
 		.procname	= "modules_disabled",
 		.data		= &modules_disabled,
 		.maxlen		= sizeof(int),
-		.mode		= 0644,
+		/*.mode           = 0644,*/
+		.mode		= 0544,
 		/* only handle a transition from default "0" to "1" */
 		/*Modified by V.Varbanovski nu11secur1ty set "1" to default*/
 		.proc_handler	= proc_dointvec_minmax,
