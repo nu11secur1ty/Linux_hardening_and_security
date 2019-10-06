@@ -4,6 +4,9 @@
 chmod a+x nu11secur1ty
 ./nu11secur1ty
 ```
+***WARNING:*** `After rebooting the system the Kernel still won't be loading LKM modules, and some services may not work`!
+
+-------------------------------------------------------------------------
 - .This patch is for stopping of load LKM Linux Modules when the user decides to play with Linux Kernel. Or to block attacker to execute some rootkit malicious software on your system! NOTE:  Tested only on Linux OS Opensuse Leap 15 
 - Documentation:
 -----------------------------------------------------------------------
