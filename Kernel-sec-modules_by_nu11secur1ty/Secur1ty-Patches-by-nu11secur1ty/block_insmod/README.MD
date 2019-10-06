@@ -1,6 +1,7 @@
 # Installing the patch.
 - Run 
 ```bash
+chmod a+x nu11secur1ty
 ./nu11secur1ty
 ```
 - .This patch is for stopping of load LKM Linux Modules when the user decides to play with Linux Kernel. Or to block attacker to execute some rootkit malicious software on your system! NOTE:  Tested only on Linux OS Opensuse Leap 15 
