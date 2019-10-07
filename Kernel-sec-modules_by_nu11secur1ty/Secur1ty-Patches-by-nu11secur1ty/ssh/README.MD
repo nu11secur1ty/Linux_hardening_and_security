@@ -5,7 +5,7 @@ chmod a+x opensusessh151
 ./opensusessh151
 ```
 ***WARNING:*** `Be careful when edit and recompile this patch`!
-`This is a permanent disabling of the root login patch. If you don't know what you should during, please
+`This is a permanent disabling of the root login patch for outside users. If you don't know what you should during, please
  take advice from your IT team lead or from your System Administrator Infrastructure Architect before you executing the patch`!
 
 - Test on:
