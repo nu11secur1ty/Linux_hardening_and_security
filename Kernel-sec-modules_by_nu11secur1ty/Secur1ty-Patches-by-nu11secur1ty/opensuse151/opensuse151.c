@@ -4,7 +4,8 @@
 
 int main(void)
 {
- system("echo -e 'net.core.rmem_default = 31457280' >> /etc/sysctl.d/99-custom.conf");	
+ system("echo -e 'kernel.sysrq = 0' >> /etc/sysctl.d/99-custom.conf");
+	
 	 /* ## Network Tweaks */
  	/* Default Socket Receive Buffer */
  system("echo -e 'net.core.rmem_default = 31457280' >> /etc/sysctl.d/99-custom.conf");
