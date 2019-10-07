@@ -5,7 +5,7 @@
 
 int main(void)
 {
-	/*clean*/
- system("sed -i 's/PermitRootLogin no/PermitRootLogin yes/' /etc/ssh/sshd_config");
+ /*Stopping permanently root login, from outside*/
+ system("sed -i 's/PermitRootLogin yes/PermitRootLogin no/' /etc/ssh/sshd_config");
 
 }
