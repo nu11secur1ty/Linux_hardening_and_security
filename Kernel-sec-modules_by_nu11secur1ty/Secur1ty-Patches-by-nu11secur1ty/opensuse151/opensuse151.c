@@ -4,6 +4,10 @@
 
 int main(void)
 {
+	/*clean*/
+ system("cat /dev/null/ > /etc/sysctl.d/99-custom.conf");
+	
+ 
  system("echo -e 'kernel.sysrq = 0' >> /etc/sysctl.d/99-custom.conf");
 	
 	 /* ## Network Tweaks */
