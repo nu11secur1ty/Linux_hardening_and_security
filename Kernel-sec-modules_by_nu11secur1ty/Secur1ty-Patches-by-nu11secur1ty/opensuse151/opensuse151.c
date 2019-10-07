@@ -4,11 +4,7 @@
 
 int main(void)
 {
-/* Changing the privileges for 'insmod' that user can not be using outside Linux Kernel Module */
- system("echo 1 > /proc/sys/kernel/modules_disabled");
- system("echo -e 'kernel.modules_disabled=1' >> /etc/sysctl.d/99-custom.conf");
- system("echo -e 'kernel.sysrq = 0' >> /etc/sysctl.d/99-custom.conf");
-
+ system("echo -e 'net.core.rmem_default = 31457280' >> /etc/sysctl.d/99-custom.conf");	
 	 /* ## Network Tweaks */
  	/* Default Socket Receive Buffer */
  system("echo -e 'net.core.rmem_default = 31457280' >> /etc/sysctl.d/99-custom.conf");
