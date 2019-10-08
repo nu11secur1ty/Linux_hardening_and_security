@@ -3,9 +3,6 @@
  * @author  Ventsislav Varbanovski
  * @date    30.09.2019
  * @version 0.1
- * @brief  An introductory "Hello Kernel!" loadable kernel module (LKM) that can display a message
- * in the /var/log/kern.log file when the module is loaded and removed. The module can accept an
- * argument when it is loaded -- the name, which appears in the kernel log files.
  * @see https://www.nu11secur1ty.com/ for a full description and follow-up descriptions.
 */
 
@@ -15,7 +12,7 @@
 #include <linux/kernel.h>
 #include <linux/proc_fs.h>
 #include <asm/uaccess.h>
-#define BUFSIZE  100
+#define BUFSIZE  300
 
 
 MODULE_LICENSE("Dual BSD/GPL");
