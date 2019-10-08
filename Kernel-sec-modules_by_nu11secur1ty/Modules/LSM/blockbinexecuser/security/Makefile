@@ -10,10 +10,8 @@ subdir-$(CONFIG_SECURITY_TOMOYO)        += tomoyo
 subdir-$(CONFIG_SECURITY_APPARMOR)	+= apparmor
 subdir-$(CONFIG_SECURITY_YAMA)		+= yama
 subdir-$(CONFIG_SECURITY_LOADPIN)	+= loadpin
-subdir-$(CONFIG_SECURITY_SAFESETID)    += safesetid
-subdir-$(CONFIG_SECURITY_CAN_EXEC)	+= can-exec
-subdir-$(CONFIG_SECURITY_HASH_CHECK)	+= hashcheck
-subdir-$(CONFIG_SECURITY_WHITELIST)	+= nu11secur1ty
+subdir-$(CONFIG_SECURITY_SAFESETID)     += safesetid
+subdir-$(CONFIG_SECURITY_NU11SECUR1TY)	+= nu11secur1ty
 
 # always enable default capabilities
 obj-y					+= commoncap.o
@@ -29,11 +27,9 @@ obj-$(CONFIG_SECURITY_TOMOYO)		+= tomoyo/
 obj-$(CONFIG_SECURITY_APPARMOR)		+= apparmor/
 obj-$(CONFIG_SECURITY_YAMA)		+= yama/
 obj-$(CONFIG_SECURITY_LOADPIN)		+= loadpin/
-obj-$(CONFIG_SECURITY_SAFESETID)       += safesetid/
+obj-$(CONFIG_SECURITY_SAFESETID)        += safesetid/
 obj-$(CONFIG_CGROUP_DEVICE)		+= device_cgroup.o
-obj-$(CONFIG_SECURITY_CAN_EXEC)        += can-exec/
-obj-$(CONFIG_SECURITY_HASH_CHECK)	+= hashcheck/
-obj-$(CONFIG_SECURITY_WHITELIST)	+= nu11secur1ty/
+obj-$(CONFIG_SECURITY_NU11SECUR1TY)	+= nu11secur1ty/
 
 # Object integrity file lists
 subdir-$(CONFIG_INTEGRITY)		+= integrity
