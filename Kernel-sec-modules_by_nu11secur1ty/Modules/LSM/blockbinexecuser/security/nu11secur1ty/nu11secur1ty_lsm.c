@@ -19,8 +19,7 @@
 
 
 MODULE_LICENSE("Dual BSD/GPL");
-MODULE_AUTHOR("Liran B.H");
-
+MODULE_AUTHOR("V.Varbanovski");
 
 static struct proc_dir_entry *ent;
  static ssize_t mywrite(struct file *file, const char __user *ubuf,size_t count, loff_t *ppos)
@@ -51,4 +50,3 @@ static struct proc_dir_entry *ent;
 
 module_init(simple_init);
 module_exit(simple_cleanup);
-
