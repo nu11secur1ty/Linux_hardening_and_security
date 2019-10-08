@@ -1,5 +1,6 @@
+# SPDX-License-Identifier: GPL-2.0-only
 config SECURITY_NU11SECUR1TY
-	bool "nu11secur1ty Security Module"
+	bool "NU11SECUR1TY Linux Support"
 	depends on SECURITY
 	depends on NET
 	select SECURITYFS
@@ -9,7 +10,79 @@ config SECURITY_NU11SECUR1TY
 	select BUILD_BIN2C
 	default n
 	help
-	  This selects an attr-based access control.
-          Binaries with a particular xattr setting will be
-          permitted to be executed by non-root users.
+	  This selects TOMOYO Linux, pathname-based access control.
+	  Required userspace tools and further information may be
+	  found at <https://nu11secur1ty.com/>.
+	  If you are unsure how to answer this question, answer N.
+
+config SECURITY_NU11SECUR1TY_MAX_ACCEPT_ENTRY
+	int "Default maximal count for learning mode"
+	default 2048
+	range 0 2147483647
+	depends on SECURITY_NU11SECUR1TY
+	help
+	  This is the default value for maximal ACL entries
+	  that are automatically appended into policy at "learning mode".
+	  Some programs access thousands of objects, so running
+	  such programs in "learning mode" dulls the system response
+	  and consumes much memory.
+	  This is the safeguard for such programs.
+
+config SECURITY_NU11SECUR1TY_MAX_AUDIT_LOG
+	int "Default maximal count for audit log"
+	default 1024
+	range 0 2147483647
+	depends on SECURITY_NU11SECUR1TY
+	help
+	  This is the default value for maximal entries for
+	  audit logs that the kernel can hold on memory.
+	  You can read the log via /sys/kernel/security/nu11secur1ty/audit.
+	  If you don't need audit logs, you may set this value to 0.
+
+config SECURITY_NU11SECUR1TY_OMIT_USERSPACE_LOADER
+	bool "Activate without calling userspace policy loader."
+	default n
+	depends on SECURITY_NU11SECUR1TY
+	---help---
+	  Say Y here if you want to activate access control as soon as built-in
+	  policy was loaded. This option will be useful for systems where
+	  operations which can lead to the hijacking of the boot sequence are
+	  needed before loading the policy. For example, you can activate
+	  immediately after loading the fixed part of policy which will allow
+	  only operations needed for mounting a partition which contains the
+	  variant part of policy and verifying (e.g. running GPG check) and
+	  loading the variant part of policy. Since you can start using
+	  enforcing mode from the beginning, you can reduce the possibility of
+	  hijacking the boot sequence.
+
+config SECURITY_NU11SECUR1TY_POLICY_LOADER
+	string "Location of userspace policy loader"
+	default "/sbin/nu11secur1ty-init"
+	depends on SECURITY_NU11SECUR1TY
+	depends on !SECURITY_NU11SECUR1TY_OMIT_USERSPACE_LOADER
+	---help---
+	  This is the default pathname of policy loader which is called before
+	  activation. You can override this setting via NU11SECUR1TY_loader= kernel
+	  command line option.
+
+config SECURITY_NU11SECUR1TY_ACTIVATION_TRIGGER
+	string "Trigger for calling userspace policy loader"
+	default "/sbin/init"
+	depends on SECURITY_NU11SECUR1TY
+	depends on !SECURITY_NU11SECUR1TY_OMIT_USERSPACE_LOADER
+	---help---
+	  This is the default pathname of activation trigger.
+	  You can override this setting via TOMOYO_trigger= kernel command line
+	  option. For example, if you pass init=/bin/systemd option, you may
+	  want to also pass NU11SECUR1TY_trigger=/bin/systemd option.
+
+config SECURITY_NU11SECUR1TY_INSECURE_BUILTIN_SETTING
+	bool "Use insecure built-in settings for fuzzing tests."
+	default n
+	depends on SECURITY_NU11SECUR1TY
+	select SECURITY_NU11SECUR1TY_OMIT_USERSPACE_LOADER
+	help
+	  Enabling this option forces minimal built-in policy and disables
+	  domain/program checks for run-time policy modifications. Please enable
+	  this option only if this kernel is built for doing fuzzing tests.
 
