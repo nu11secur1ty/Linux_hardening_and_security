@@ -1,30 +1,6 @@
-Linux Security Modules
-----------------------
-
-This repository contains a simple collection of linux security modules, which were written as a learning/experimentation-process.
-
-## Modules
-
-There are three modules contained within this repository, two of which are simple tests and one of which is more "real".
-
-These are test-modules:
-
-* [whitelist](security/whitelist/)
-   * Only allow execution of binaries which have a specific `xattr` present.
-* [hashcheck](security/hashcheck/)
-   * Only allow execution of commands with `xattr` containing valid SHA1sum of binaries.
-   * This builds upon the previous module.
-
-This is the only "real" module:
-
-* [can-exec](security/can-exec)
-   * The the user-space helper `/sbin/can-exec` is invoked to determine whether a user can execute a specific command.
-   * Because user-space controls execution policies can be written/updated dynamically.
-
-
 ## Linux Compatibility & Compilation
 
-The code has been tested upon kernels as recent as 5.1
+The code has been tested upon kernels as recent as 5.3
 
 Copy the contents of `security/` into your local Kernel-tree, and run `make menuconfig` to enable the appropriate options.
 
@@ -36,6 +12,3 @@ For a Debian GNU/Linux host, building a recent kernel, these are the dependencie
                         build-essential make libncurses5-dev \
                         git-core
 
-
-## Documentation
-- soon...
