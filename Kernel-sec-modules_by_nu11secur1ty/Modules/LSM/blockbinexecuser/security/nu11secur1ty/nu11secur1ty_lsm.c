@@ -1,85 +1,50 @@
-/*
- * nu11secur1ty_lsm.c
- *
- * Allow/deny execution of programs to non-root users, by looking for
- * a security attribute upon the file.
- *
- * To set a program as nu11secur1tyted you must add a label to the target,
- * for example:
- *
- *     setfattr -n security.nu11secur1ty -v 3 /bin/dash
- *
- * To confirm there is a label present you can use the dump option:
- *
- *     ~# getfattr -d -m security /bin/dash
- *     getfattr: Removing leading '/' from absolute path names
- *     # file: bin/dash
- *     security.nu11secur1ty="3"
- *
- * Finally to revoke the label, and deny execution once more:
- *
- *     ~# setfattr -x security.nu11secur1ty /bin/dash
- *
- * There is a helper tool located in `samples/nu11secur1ty` which wraps
- * that for you, in a simple way.
- *
- * Steve
- * Modified and development: V.Varbanovski
- * --
- *
+/**
+ * @file    nu11secur1ty.c
+ * @author  Ventsislav Varbanovski
+ * @date    30.09.2019
+ * @version 0.1
+ * @brief  An introductory "Hello Kernel!" loadable kernel module (LKM) that can display a message
+ * in the /var/log/kern.log file when the module is loaded and removed. The module can accept an
+ * argument when it is loaded -- the name, which appears in the kernel log files.
+ * @see https://www.nu11secur1ty.com/ for a full description and follow-up descriptions.
+*/
+
+#include <linux/init.h>             // Macros used to mark up functions e.g., __init __exit
+#include <linux/module.h>           // Core header for loading LKMs into the kernel
+#include <linux/kernel.h>           // Contains types, macros, functions for the kernel
+
+
+MODULE_LICENSE("GPL");              ///< The license type -- this affects runtime behavior
+MODULE_AUTHOR("Ventsislav Varbanovski");      ///< The author -- visible when you use modinfo
+MODULE_DESCRIPTION("A simple Linux driver for the BBB.");  ///< The description -- see modinfo
+MODULE_VERSION("0.1");                ///< The version of the module
+
+static char *name = "Kernel";        ///< An example LKM argument -- default value is "Kernel"
+module_param(name, charp, S_IRUGO); ///< Param desc. charp = char ptr, S_IRUGO can be read/not changed
+MODULE_PARM_DESC(name, "The name to display in /var/log/kern.log");  ///< parameter description
+
+/** @brief The LKM initialization function
+ *  The static keyword restricts the visibility of the function to within this C file. The __init
+ *  macro means that for a built-in driver (not a LKM) the function is only used at initialization
+ *  time and that it can be discarded and its memory freed up after that point.
+ *  @return returns 0 if successful
  */
-
-
-#include <linux/xattr.h>
-#include <linux/binfmts.h>
-#include <linux/lsm_hooks.h>
-#include <linux/cred.h>
-
-
-/*
- * Perform a check of a program execution/map.
- *
- * Return 0 if it should be allowed, -EPERM on block.
- */
-static int nu11secur1ty_bprm_check_security(struct linux_binprm *bprm)
-{
-       // The current task & the UID it is running as.
-       const struct task_struct *task = current;
-       kuid_t uid = task->cred->uid;
-
-       // The target we're checking
-       struct dentry *dentry = bprm->file->f_path.dentry;
-       struct inode *inode = d_backing_inode(dentry);
-
-       // Size of the attribute, if any.
-       int size = 0;
-
-       // Root can access everything.
-       if ( uid.val == 0 )
-          return 0;
-
-       // Is there an attribute?  If so allow the access
-       size = __vfs_getxattr(dentry, inode, "security.nu11secur1ty", NULL, 0);
-       if ( size > 0 )
-           return 0;
-
-       // Otherwise deny it.
-       printk(KERN_INFO "nu11secur1ty LSM check of %s denying access for UID %d [ERRO:%d] \n", bprm->filename, uid.val, size );
-       return -EPERM;
+static int __init nu11secur1tyBBB_init(void){
+   printk(KERN_INFO "EBB: nu11secur1ty %s from the BBB LKM!\n", name);
+   return 0;
 }
 
-/*
- * The hooks we wish to be installed.
+/** @brief The LKM cleanup function
+ *  Similar to the initialization function, it is static. The __exit macro notifies that if this
+ *  code is used for a built-in driver (not a LKM) that this function is not required.
  */
-static struct security_hook_list nu11secur1ty_hooks[] __lsm_ro_after_init = {
-	LSM_HOOK_INIT(bprm_check_security, nu11secur1ty_bprm_check_security),
-};
-
-/*
- * Initialize our module.
- */
-void __init nu11secur1ty_add_hooks(void)
-{
-	security_add_hooks(nu11secur1ty_hooks, ARRAY_SIZE(nu11secur1ty_hooks), "nu11secur1ty");
-	printk(KERN_INFO "nu11secur1ty LSM initialized\n");
+static void __exit nu11secur1tyBBB_exit(void){
+   printk(KERN_INFO "EBB: Goodbye %s from the BBB LKM!\n", name);
 }
+
+/** @brief A module must use the module_init() module_exit() macros from linux/init.h, which
+ *  identify the initialization function at insertion time and the cleanup function (as
+ *  listed above)
+ */
+module_init(nu11secur1tyBBB_init);
+module_exit(nu11secur1tyBBB_exit);
