@@ -69,7 +69,7 @@ static struct file_operations myops =
 
 static int simple_init(void)
 {
-	ent=proc_create("nu11sec",0660,NULL,&myops);
+	ent=proc_create("nu11secur1ty-sec",0660,NULL,&myops);
 	printk(KERN_ALERT "hello from nu11secur1ty\n");
 	return 0;
 }
