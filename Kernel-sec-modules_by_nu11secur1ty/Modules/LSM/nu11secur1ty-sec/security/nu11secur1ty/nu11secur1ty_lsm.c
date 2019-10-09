@@ -19,7 +19,7 @@
 MODULE_LICENSE("Dual BSD/GPL");
 MODULE_AUTHOR("Liran B.H");
 
-static int irq=20;
+static int irq=1;
 module_param(irq,int,0660);
 
 static int mode=1;
