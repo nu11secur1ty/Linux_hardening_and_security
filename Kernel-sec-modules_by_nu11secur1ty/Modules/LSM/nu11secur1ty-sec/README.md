@@ -17,9 +17,7 @@ Copy the contents of `security/` into your local Kernel-tree, and run `make menu
 
 ------------------------------------------------------------------------------------------------------
 
-**NOTE**: This module is created to build file in Kernel virtual directory `proc` with special contend!
-          Late I will build another sofware which will pars information from this file and it will never interfere with the kernel.
-          From Kernel base, the sitation is the same. The purpose of the module is to provide special data to the user space and    back without breaking the rules!
+**NOTE**: This module is created to build files in Kernel virtual directory `proc` with special content! Later I will build another software that will pars information from this file and it will never interfere with the kernel. From the Kernel base, the situation is the same. The purpose of the module is to provide special data to the user space and back without breaking the rules!
           
  -------------------------------------------------------------------------------------------------------
 
