@@ -2,11 +2,20 @@
 
 ## Linux Compatibility & Compilation
 
-The code has been tested upon kernels as recent as 5.3
+# OS 
+- OpenSuse Leap 15.1
+
+The code has been tested upon kernels as recent as 5.3 it works!
+
 
 Copy the contents of `security/` into your local Kernel-tree, and run `make menuconfig` to enable the appropriate options.
 
-**NOTE**: Over time the two files `security/Kconfig` & `security/Makefile` might need resyncing with the base versions installed with the Linux source-tree, you can look for mentions of `CAN_EXEC`, `HASH_CHECK`, & `WHITELIST` to see what I've done to add the modules.
+------------------------------------------------------------------------------------------------------
+
+**NOTE**: This module is created to build file in Kernel virtual directory `proc` with special contend!
+          Late I will buils another sofware which will pars information from this file and it will never interfere with the kernel.
+          From Kernel base, the sitation is the same. The purpose of the module is to provide special data to the user space and back without breaking the rules
+
 
 For a Debian GNU/Linux host, building a recent kernel, these are the dependencies you'll need to install:
 
