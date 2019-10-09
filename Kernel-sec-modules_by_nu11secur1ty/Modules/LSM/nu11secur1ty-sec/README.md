@@ -2,13 +2,14 @@
 
 ## Linux Compatibility & Compilation
 
-# OS 
+# The code has been tested upon kernels as recent as 5.3 it works!
+- OS's 
 - OpenSuse Leap 15.1
 -
 -
 -
 
-The code has been tested upon kernels as recent as 5.3 it works!
+
 
 -----------------------------------------------------------------------------------------------------
 
