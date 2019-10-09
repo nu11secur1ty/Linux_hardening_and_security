@@ -35,8 +35,6 @@ For a Debian GNU/Linux host, building a recent kernel, these are the dependencie
     (2048) Default maximal count for learning mode NEW ;)
     (1024) Default maximal count for audit log NEW ;)
 [*] Activate without calling userspace policy loader. NEW ;)
-
-
 ```
 ![1](https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/Kernel-sec-modules_by_nu11secur1ty/Modules/LSM/nu11secur1ty-sec/wall/Screenshot%20from%202019-10-09%2013-39-37.png)
 
