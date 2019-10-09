@@ -1,22 +1,18 @@
 ## WARNING: The status of the module is "`under construction`"!!!
 
 ## Linux Compatibility & Compilation
-
-# The code has been tested upon kernels as recent as 5.3 it works!
-- OS's 
-- OpenSuse Leap 15.1
--
--
--
-
-
-
 -----------------------------------------------------------------------------------------------------
 
 Copy the contents of `security/` into your local Kernel-tree, and run `make menuconfig` to enable the appropriate options.
 
 ------------------------------------------------------------------------------------------------------
 
+# Tested on Kernels:
+- 5.3.4 it works!
+- OS's 
+- OpenSuse Leap 15.1
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
 **NOTE**: This module is created to build files in Kernel virtual directory `proc` with special content! Later I will build another software that will pars information from this file and it will never interfere with the kernel. From the Kernel base, the situation is the same. The purpose of the module is to provide special data to the user space, and back without breaking the rules! The module is especially for blocking the kernel `insmod` tool!
           
  -------------------------------------------------------------------------------------------------------
