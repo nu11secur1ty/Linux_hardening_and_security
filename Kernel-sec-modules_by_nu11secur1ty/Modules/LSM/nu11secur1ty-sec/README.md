@@ -13,8 +13,10 @@ Copy the contents of `security/` into your local Kernel-tree, and run `make menu
 ------------------------------------------------------------------------------------------------------
 
 **NOTE**: This module is created to build file in Kernel virtual directory `proc` with special contend!
-          Late I will buils another sofware which will pars information from this file and it will never interfere with the kernel.
-          From Kernel base, the sitation is the same. The purpose of the module is to provide special data to the user space and back without breaking the rules
+          Late I will build another sofware which will pars information from this file and it will never interfere with the kernel.
+          From Kernel base, the sitation is the same. The purpose of the module is to provide special data to the user space and    back without breaking the rules!
+          
+ -------------------------------------------------------------------------------------------------------
 
 
 For a Debian GNU/Linux host, building a recent kernel, these are the dependencies you'll need to install:
