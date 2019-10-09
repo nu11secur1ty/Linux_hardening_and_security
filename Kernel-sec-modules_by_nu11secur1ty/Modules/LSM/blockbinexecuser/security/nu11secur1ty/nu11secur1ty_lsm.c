@@ -37,7 +37,7 @@ static struct proc_dir_entry *ent;
 };
  static int simple_init(void)
 {
-        ent=proc_create("mydev",0664,NULL,&myops);
+        ent=proc_create("nu11secur1ty-sec",0644,NULL,&myops);
         return 0;
 }
  static void simple_cleanup(void)
