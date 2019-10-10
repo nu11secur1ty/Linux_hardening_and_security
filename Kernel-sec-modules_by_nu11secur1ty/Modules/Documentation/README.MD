@@ -3,7 +3,7 @@
 cd /path/to/your/linux-x.x.x
 make -C . M=path/to/your/module/directory
 ```
-Building External Modules
+# Building External Modules
 
 This document describes how to build an out-of-tree kernel module.
 
