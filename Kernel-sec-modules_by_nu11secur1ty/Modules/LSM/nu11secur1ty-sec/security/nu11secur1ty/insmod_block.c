@@ -1,7 +1,7 @@
 /**
- * @file    nu11secur1ty_lsm.c
+ * @file    insmod_block.c
  * @author  Ventsislav Varbanovski
- * @date    30.09.2019
+ * @date    10.10.2019
  * @version 0.1
  * @see https://www.nu11secur1ty.com/ for a full description and follow-up descriptions.
 */
@@ -69,7 +69,7 @@ static struct file_operations myops =
 
 static int simple_init(void)
 {
-	ent=proc_create("nu11secur1ty-sec",0660,NULL,&myops);
+	ent=proc_create("insmod_block",0660,NULL,&myops);
 	printk(KERN_ALERT "hello from nu11secur1ty\n");
 	return 0;
 }
