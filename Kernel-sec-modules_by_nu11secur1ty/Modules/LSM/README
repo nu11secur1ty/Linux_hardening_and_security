@@ -676,7 +676,8 @@ Public License instead of this License.  But first, please read
 <https://www.gnu.org/licenses/why-not-lgpl.html>.
 
 ### Installing:
-- Copy contend from nu11secur1ty-sec to your Kernel security tree, execute make menuconfig and choice your options!
+- Copy content from (nu11secur1ty-sec/) to your Kernel (security) tree, execute make menuconfig and choice your options!
+
 Screen: <https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/Kernel-sec-modules_by_nu11secur1ty/Modules/LSM/wall/Screenshot%20from%202019-10-10%2016-07-51.png>
 
 
