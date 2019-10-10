@@ -10,7 +10,7 @@ config SECURITY_NU11SECUR1TY
 	select BUILD_BIN2C
 	default n
 	help
-	  This selects TOMOYO Linux, pathname-based access control.
+	  This selects NU11SECUR1TY Linux, pathname-based access control.
 	  Required userspace tools and further information may be
 	  found at <https://nu11secur1ty.com/>.
 	  If you are unsure how to answer this question, answer N.
