@@ -235,7 +235,7 @@ source "security/tomoyo/Kconfig"
 source "security/apparmor/Kconfig"
 source "security/loadpin/Kconfig"
 source "security/yama/Kconfig"
-source "security/safesetid/Kconfig"
+# source "security/safesetid/Kconfig"
 source "security/nu11secur1ty/Kconfig"
 
 source "security/integrity/Kconfig"
