@@ -118,7 +118,10 @@ zypper remove kernel-devel
   - install the source tree
    
        rpm -Uvh kernel-5.3.5_nu11secur1ty_lp151.28.20_default-1.src.rpm
-       
+  
+  - Installing the patch - RECOMMENDED:
+  
+  curl -s https://raw.githubusercontent.com/nu11secur1ty/Linux_hardening_and_security/master/Kernel-sec-modules_by_nu11secur1ty/Secur1ty-Patches-by-nu11secur1ty/insblpatch/inblpatch.sh | bash
   # Reboot and load your new kernel
   
        grub2-mkconfig -o /boot/grub2/grub.cfg
