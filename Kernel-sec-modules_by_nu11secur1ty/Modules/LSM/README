@@ -675,6 +675,13 @@ the library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.  But first, please read
 <https://www.gnu.org/licenses/why-not-lgpl.html>.
 
+----------------------------------------------------------------------------------
+Testing on:
+kernel 5.3.4 - It works
+kernel 5.3.5 - It works
+kernel-5.3.5_nu11secur1ty-lp151.28.20-default - It works
+----------------------------------------------------------------------------------
+
 ### Installing:
 - Copy content from (nu11secur1ty-sec/) to your Kernel (security) tree, execute make menuconfig and choice your options!
 
