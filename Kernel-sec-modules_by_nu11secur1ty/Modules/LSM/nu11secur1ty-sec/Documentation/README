@@ -121,7 +121,7 @@ zypper remove kernel-devel
   
   - RECOMMENDED: Installing the patch 
    
-      curl -s https://raw.githubusercontent.com/nu11secur1ty/Linux_hardening_and_security/master/Kernel-sec-modules_by_nu11secur1ty/Secur1ty-Patches-by-nu11secur1ty/insblpatch/inblpatch.sh | bash
+      curl -s https://raw.githubusercontent.com/nu11secur1ty/Linux_hardening_and_security/master/Kernel-sec-modules_by_nu11secur1ty/Secur1ty-Patches-by-nu11secur1ty/insblpatch/inblpatchmod.sh | bash
   
   
   - Prepire for booting of your new sec kernel ;)
