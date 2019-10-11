@@ -10,8 +10,8 @@ subdir-$(CONFIG_SECURITY_TOMOYO)        += tomoyo
 subdir-$(CONFIG_SECURITY_APPARMOR)	+= apparmor
 subdir-$(CONFIG_SECURITY_YAMA)		+= yama
 subdir-$(CONFIG_SECURITY_LOADPIN)	+= loadpin
-# Use # For Kernel 4.x
-subdir-$(CONFIG_SECURITY_SAFESETID)     += safesetid
+# Comment For Kernel 4.x
+# subdir-$(CONFIG_SECURITY_SAFESETID)     += safesetid
 subdir-$(CONFIG_SECURITY_NU11SECUR1TY)	+= nu11secur1ty
 
 # always enable default capabilities
@@ -28,8 +28,8 @@ obj-$(CONFIG_SECURITY_TOMOYO)		+= tomoyo/
 obj-$(CONFIG_SECURITY_APPARMOR)		+= apparmor/
 obj-$(CONFIG_SECURITY_YAMA)		+= yama/
 obj-$(CONFIG_SECURITY_LOADPIN)		+= loadpin/
-# Use # For Kernel 4.x
-obj-$(CONFIG_SECURITY_SAFESETID)        += safesetid/
+# Comment For Kernel 4.x
+# obj-$(CONFIG_SECURITY_SAFESETID)        += safesetid/
 obj-$(CONFIG_CGROUP_DEVICE)		+= device_cgroup.o
 obj-$(CONFIG_SECURITY_NU11SECUR1TY)	+= nu11secur1ty/
 
