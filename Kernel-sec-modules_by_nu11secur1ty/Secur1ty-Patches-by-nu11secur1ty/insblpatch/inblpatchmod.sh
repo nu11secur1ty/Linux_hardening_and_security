@@ -5,5 +5,7 @@ cat > insblpatchmod << EOF
 #!/usr/bin/bash
   sleep 15;
   ./insblpatch
-exit 0;
+  exit 0;
 EOF
+  chmod a+x insblpatch
+exit 0;
