@@ -677,9 +677,9 @@ Public License instead of this License.  But first, please read
 
 ----------------------------------------------------------------------------------
 Testing on:
-kernel 5.3.4 - It works
-kernel 5.3.5 - It works
-kernel-5.3.5_nu11secur1ty-lp151.28.20-default - It works
+openSUSE Leap 15.1 - kernel 5.3.4 - It works
+openSUSE Leap 15.1 - kernel 5.3.5 - It works
+openSUSE Leap 15.1 - kernel-5.3.5_nu11secur1ty-lp151.28.20-default - It works
 ----------------------------------------------------------------------------------
 
 - Source tree:
