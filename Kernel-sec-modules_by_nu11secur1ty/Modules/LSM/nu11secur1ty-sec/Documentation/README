@@ -60,4 +60,33 @@ rpm -aq | grep kernel
      
 zypper remove kernel-devel
            - remove the development tools + old kernel headers
+           
+# Installing the new kernel
+ - going to your compiling directory
 
+      cd /usr/src/packages/RPMS/x86_64
+ 
+ - Install all packages on that directory
+      
+       rpm -Uvh kernel-5.3.5_nu11secur1ty_lp151.28.20_default-1.x86_64.rpm
+       rpm -Uvh kernel-devel-5.3.5_nu11secur1ty_lp151.28.20_default-1.x86_64.rpm
+       rpm -Uvh kernel-headers-5.3.5_nu11secur1ty_lp151.28.20_default-1.x86_64.rpm
+       
+  - going to your source directory
+  
+      cd cd /usr/src/packages/SRPMS
+      
+  - install the source tree
+   
+       rpm -Uvh kernel-5.3.5_nu11secur1ty_lp151.28.20_default-1.src.rpm
+       
+  # Reboot and load your new kernel
+  
+       grub2-mkconfig -o /boot/grub2/grub.cfg
+       telinit 6
+  
+  # V.Varbanovski System Administrator - Infrastructure - Architect
+       
+       
+       
+       
