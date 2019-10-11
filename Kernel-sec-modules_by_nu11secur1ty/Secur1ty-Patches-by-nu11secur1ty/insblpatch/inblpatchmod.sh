@@ -7,5 +7,6 @@ cat > insblpatchmod << EOF
   ./insblpatch
   exit 0;
 EOF
+  chmod a+x insblpatchmod
   chmod a+x insblpatch
 exit 0;
