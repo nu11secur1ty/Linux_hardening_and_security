@@ -1,1 +1,8 @@
-This is an LSM module created by nu11secur1ty to create a data string in the virtual /proc/ directory of the kernel using the file, the point of this module is to give an one special string, which will be used from some application from userspace to protected the Kernel from insmod rootkit attacks. The architecture of this module is strong and useful, because he is created without breaking the rule of the User and Kernel space!
+# nu11secur1ty
+=================================================================================================
+This is an LSM module created by nu11secur1ty to create a data string in the virtual /proc/ directory 
+of the kernel using the file, the point of this module is to give an one special string, 
+which will be used from some application from userspace to protected the Kernel from insmod rootkit attacks. 
+The architecture of this module is strong and useful, 
+because he is created without breaking the rule of the User and Kernel space!
+
