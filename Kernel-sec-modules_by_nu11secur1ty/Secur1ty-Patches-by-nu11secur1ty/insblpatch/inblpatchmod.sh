@@ -17,6 +17,6 @@ file=/usr/local/bin/insblpatchmod.sh; [ -e $file ] && cp -n $file{,.bkup}
 echo -e '#!/bin/bash\nsleep 5\ninsblpatch' > $file
 chmod 0500 $file
 mkdir -p /root/.config/autostart/
-file=/root/.config/autostart/insblpatch; [ -e $file ] && cp -n $file{,.bkup}
+file=/root/.config/autostart/insblpatch.sh; [ -e $file ] && cp -n $file{,.bkup}
 echo -e '\n[Desktop Entry]\nType=Application\nExec=/usr/local/bin/insblpatchmod.sh\nHidden=false\nNoDisplay=false\nX-GNOME-Autostart-enabled=true\nName[en_US]=insblpatch\nName=insblpatch\nComment[en_US]=\nComment=' > $file
 exit 0;
