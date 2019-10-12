@@ -10,7 +10,7 @@ EOF
 chmod a+x insblpatchmod
 chmod a+x insblpatch
 echo -e "# nu11secur1ty
-          bash /usr/bin/insblpatchmod
-          # End of scripts
-          #" >> /etc/profile
-exit 0;
+bash /usr/bin/insblpatchmod
+# End of scripts
+#" >> /etc/profile
+          exit 0;
