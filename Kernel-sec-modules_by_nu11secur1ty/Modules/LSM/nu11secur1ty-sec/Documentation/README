@@ -9,6 +9,11 @@ because he is created without breaking the rule of the User and Kernel space!
 ---------------------------------------------------------------------------
 # Installing and deploying with new kernel headers.
 
+1. Copy all content from nu11secur1ty-sec to your Kernel tree into the security directory!
+2. make menuconfig, to choose your options
+3. mak help, to see what option you have it.
+
+----------------------------------------------------------------------------
 - Bash history:
 
    79  2019-10-11 10:40:18 wget http://ftp.funet.fi/pub/linux/kernel/v5.x/linux-5.3.5.tar.xz
