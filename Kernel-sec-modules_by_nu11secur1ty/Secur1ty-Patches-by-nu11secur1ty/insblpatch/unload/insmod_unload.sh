@@ -5,6 +5,7 @@ sleep 3;
 cd /usr/bin
   rm -rf insblpatch insblpatchmod
   cd /root/
+  chmod a+x insmod_unload
     ./insmod_unload
     telit 6;
 exit 0;
