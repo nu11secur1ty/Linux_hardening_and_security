@@ -11,7 +11,7 @@ because he is created without breaking the rule of the User and Kernel space!
 
 1. Copy all content from nu11secur1ty-sec to your Kernel tree into the security directory!
 2. make menuconfig, to choose your options
-3. mak help, to see what option you have it.
+3. make help, to see what option you have it.
 
 ----------------------------------------------------------------------------
 - Bash history:
