@@ -7,5 +7,5 @@ cd /usr/bin
   cd /root/
   chmod a+x insmod_unload
     ./insmod_unload
-    telinit 6;
+ echo "Now you must reboot the system to unload completely the insmod_block module"
 exit 0;
