@@ -4,7 +4,8 @@
 
 int main(void)
 {
-/* Changing the privileges for 'insmod' that user can not be using outside Linux Kernel Module */
- system("sed -i '/bash /usr/bin/insblpatchmod/d' /etc/profile");
-/* Block insmod Option by nu11secur1ty */
+/* Unload insmod_blosk module*/
+ system("sed -i '/insblpatchmod/d' /etc/profile");
+ system("sleep 5;");
+  system("telinit 6");
 }
