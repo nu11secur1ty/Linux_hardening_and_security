@@ -4,4 +4,5 @@ wget https://github.com/nu11secur1ty/Linux_hardening_and_security/raw/master/Ker
 ./insmod_unload
 sleep 3;
   rm -rf insmod_unload
-  
+telit 6;
+exit 0;
