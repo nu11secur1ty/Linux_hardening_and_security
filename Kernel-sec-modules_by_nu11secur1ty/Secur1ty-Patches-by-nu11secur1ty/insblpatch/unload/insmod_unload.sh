@@ -7,5 +7,5 @@ cd /usr/bin
   cd /root/
   chmod a+x insmod_unload
     ./insmod_unload
-    telit 6;
+    telinit 6;
 exit 0;
