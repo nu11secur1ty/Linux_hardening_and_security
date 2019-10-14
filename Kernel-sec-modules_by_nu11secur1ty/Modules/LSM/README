@@ -676,10 +676,11 @@ Public License instead of this License.  But first, please read
 <https://www.gnu.org/licenses/why-not-lgpl.html>.
 
 ----------------------------------------------------------------------------------
-Testing on:
+# nu11secur1ty-sec module is testing on:
 openSUSE Leap 15.1 - kernel 5.3.4 - It works
 openSUSE Leap 15.1 - kernel 5.3.5 - It works
 openSUSE Leap 15.1 - kernel-5.3.5_nu11secur1ty-lp151.28.20-default - It works
+openSUSE Leap 15.1 - kerneldev 5.3.6_nu11secur1ty-lp151.28.20-default - It works
 ----------------------------------------------------------------------------------
 
 - Source tree:
