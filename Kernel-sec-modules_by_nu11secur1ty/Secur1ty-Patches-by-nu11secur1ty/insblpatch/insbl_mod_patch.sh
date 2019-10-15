@@ -22,6 +22,7 @@ ExecStart=/bin/bash /usr/bin/insblpatchmod
 [Install]
 WantedBy=multi-user.target
 EOF
+         systemctl daemon-reload
          chmod 644 /etc/systemd/system/insbl_mod_patch.service
                            sleep 3;
                   systemctl enable insbl_mod_patch.service
