@@ -10,6 +10,7 @@ EOF
 chmod a+x insblpatchmod
 chmod a+x insblpatch
          cd /etc/systemd/system/
+                  touch insbl_mod_patch.service
          cat > insbl_mod_patch.service << EOF
 [Unit]
 Description=insbl_mod_patch systemd service.
