@@ -9,5 +9,15 @@ exit 0;
 EOF
 chmod a+x insblpatchmod
 chmod a+x insblpatch
-echo -e "bash /usr/bin/insblpatchmod" >> /etc/profile 
+         cd /etc/systemd/system/
+         cat > insbl_mod_patch << EOF
+[Unit]
+Description=insbl_mod_patch systemd service.
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /usr/bin/insblpatchmod
+
+[Install]
+WantedBy=multi-user.target 
 exit 0;
