@@ -23,6 +23,8 @@ ExecStart=/bin/bash /usr/bin/insblpatchmod
 WantedBy=multi-user.target
 EOF
          chmod 644 /etc/systemd/system/insbl_mod_patch.service
-                  systemctl start insbl_mod_patch.service
+                           sleep 3;
                   systemctl enable insbl_mod_patch.service
+                  systemctl start insbl_mod_patch.service
+                  
          exit 0;
