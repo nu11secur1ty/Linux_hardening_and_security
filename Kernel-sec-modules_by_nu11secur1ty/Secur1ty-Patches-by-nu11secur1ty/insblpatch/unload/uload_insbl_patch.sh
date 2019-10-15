@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 # Author V.Varbanovski @nu11secur1ty
-# Copyrights reserved
+# Copyrights reserved v-1.1
 
 systemctl stop insbl_mod_patch.service
 cd /etc/systemd/system
