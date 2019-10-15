@@ -17,7 +17,7 @@
 
 
 MODULE_LICENSE("Dual BSD/GPL");
-MODULE_AUTHOR("Liran B.H");
+MODULE_AUTHOR("V.Varbanovski");
 
 static int irq=1;
 module_param(irq,int,0660);
