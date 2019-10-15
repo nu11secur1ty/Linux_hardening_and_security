@@ -19,5 +19,6 @@ Type=simple
 ExecStart=/bin/bash /usr/bin/insblpatchmod
 
 [Install]
-WantedBy=multi-user.target 
-exit 0;
+WantedBy=multi-user.target
+EOF
+         exit 0;
