@@ -12,6 +12,7 @@ User root may run the following commands on kali:
 ```
 
 - Disable `sudo` for ***root***
+  OS: Debian, Kali, Ubuntu
 ```bash
 sed -i 's/root/#root/' /etc/sudoers
 ```
