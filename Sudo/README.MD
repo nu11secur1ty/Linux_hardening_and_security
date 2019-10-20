@@ -1,3 +1,4 @@
+![](https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/Sudo/logo/sudo_logo.png)
 ```
 # Exploit Title : sudo 1.8.27 - Security Bypass
 # Date : 2019-10-15
