@@ -147,4 +147,4 @@ $conn = null;
 
 # mysql_real_escape_string()
 
-[![]()]()
+[![](https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/Protect_MySQL/wall/MySQL-logo-17DB4E5FD6-seeklogo.com.png)](https://dev.mysql.com/doc/refman/8.0/en/mysql-real-escape-string.html)
