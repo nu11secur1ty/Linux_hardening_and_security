@@ -1,4 +1,5 @@
 # Example (MySQLi with Prepared Statements)
+![](https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/Protect_MySQL/wall/Blog_MySQL-Security.jpg)
 
 - Prepared Statements and Bound Parameters
 
