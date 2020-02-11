@@ -16,7 +16,7 @@ Bound parameters minimize bandwidth to the server as you need send only the para
 Prepared statements are very useful against `SQL injections`, because parameter values, which are transmitted later using a different protocol, need not be correctly escaped. If the original statement template is not derived from external input, SQL injection cannot occur.
 
 
-- Example:
+- Example (MySQLi with Prepared Statements)
 
 ```php
 <?php
