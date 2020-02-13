@@ -115,5 +115,40 @@ vda               1.00         3.40        14.08    1552428    6423128
 - **Blk_read** : show the total number of blocks read
 - **Blk_wrtn** : show the total number of blocks written
 
+- iostat uses the files below to create reports.
+
+`/proc/stat` contains system statistics.
+`/proc/uptime` contains system uptime.
+`/proc/diskstats` contains disks statistics.
+`/sys` contains statistics for block devices.
+`/proc/self/mountstats` contains statistics for network filesystems.
+`/dev/disk`contains persistent device names
+
+2) Show more details statistics information
 
 
+Iostat command gives I/O devices report utilization. It is possible to extend the statistic result for a diagnose in depth with `-x` option
+
+
+```bash
+# iostat -x
+Linux 3.10.0-514.16.1.el7.x86_64 (centos-01) 	05/23/2017 	_x86_64_	(1 CPU)
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.69    0.00    0.19    0.02    0.04   99.06
+
+Device: rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+vda     0.01     1.10    0.16    0.84     3.37    14.04    34.88     0.00    2.35    1.41    2.53   0.40   0.04
+```
+
+
+- **avg-cpu**: it is the cpu block information
+- **Devide**: it is device block information. To be sure you are on the good device
+- **%util**: how much time did the storage device have outstanding work (was busy).
+- **svctm**: indicate how fast does your I/O subsystem respond requests overall when busy. Actually, less you load your         system, higher svctm is.
+- **await**: indicates how fast do requests go through. It is just an average.
+- **avgqu-sz**: how many requests are there in a request queue. Low = either your system is not loaded, or has serialized       I/O and cannot utilize underlying storage properly. High = your software stack is scalable enough to load properly           underlying I/O.
+- **avgrq-sz**: Just an average request size. can indicate what kind of workload happens.
+- **wsec/s** & **rsec/s**: Sectors read and written per second. Divide by 2048, and you’ll get megabytes per second.
+- **r/s** & **w/s**: Read and write requests per second. These numbers are the ones that are the I/O capacity figures,           though of course, depending on how much pressure underlying I/O subsystem gets (queue size!), they can vary.
+- **rrqm/s** & **wrqm/s**: How many requests were merged by block layer.
