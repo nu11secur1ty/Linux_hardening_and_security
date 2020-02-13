@@ -1,5 +1,5 @@
 # Linux iostat Command to Report CPU and I/O Statistics 10 Command
-![]()
+![](https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/IOSTAT/screen/iostat.png)
 
 Iostat command is a command used to monitor system's input/output (I/O) device load by observing the time the devices are active in relation to their average transfer rates.  The iostat create reports that can be used to change system configuration to better balance the input/output between physical disks.
 
