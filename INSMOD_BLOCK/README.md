@@ -8,5 +8,6 @@ This module is designed to protect you against rootkits and malicious code which
 -----------------------------------------------------
 Module: https://github.com/nu11secur1ty/insmod_block
 
+Blog: https://www.nu11secur1ty.com/search?q=insmod_block
 
 BR 
