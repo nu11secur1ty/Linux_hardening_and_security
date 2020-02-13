@@ -1,4 +1,4 @@
-**insmod_block** from ***Ventsislav Varbanovski SAIE***  
+**insmod_block** from ***Ventsislav Varbanovski @nu11secur1ty SAIE***  
 ![](https://github.com/nu11secur1ty/Linux_hardening_and_security/blob/master/INSMOD_BLOCK/logo/Kernel.png)
 
 is a Linux Kernlek `LKM` module based on virtual directory proc.
