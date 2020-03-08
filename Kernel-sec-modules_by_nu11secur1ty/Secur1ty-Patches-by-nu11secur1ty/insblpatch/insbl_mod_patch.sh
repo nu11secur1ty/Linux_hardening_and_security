@@ -20,8 +20,12 @@ chmod a+x insblpatch
 [Unit]
 Description=insbl_mod_patch systemd service.
 
+[Timer]
+AccuracySec=10
+OnActiveSec=10
+
 [Service]
-RuntimeMaxSec=604800
+ExecStartPre=/bin/sleep 49
 Type=simple
 ExecStart=/bin/bash /usr/bin/insblpatchmod
 
