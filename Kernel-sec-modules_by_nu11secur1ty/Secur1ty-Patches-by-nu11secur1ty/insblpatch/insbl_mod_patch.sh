@@ -21,7 +21,7 @@ chmod a+x insblpatch
 Description=insbl_mod_patch systemd service.
 
 [Service]
-ExecStart=/usr/bin/atd 45
+RuntimeMaxSec=604800
 Type=simple
 ExecStart=/bin/bash /usr/bin/insblpatchmod
 
