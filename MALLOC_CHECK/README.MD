@@ -21,12 +21,16 @@ When this happens, all bets are off, except that is pretty good bet that the mem
 Resolution
 Setting MALLOC_CHECK_ :
 
-If MALLOC_CHECK_ is set to 0 (zero) , the memory management functions are simply more tolerant of error but do not give warnings.
+- `If MALLOC_CHECK_ is set to 0 (zero)` , the memory management functions are simply more tolerant of error but do not give warnings.
 Maybe be useful if we are prevented from finding one memory bug by another that is not convenient to fix at the moment; it might allow us to use other tools to chase down the other memory bug.
 It may also be useful if you are running code that works on another system but not on Linux and we want a quick workaround that may allow the code to function temporarily, before you have the chance to resolve the error.
-If MALLOC_CHECK_ is set to 1 (one) , the memory management functions print out warning messages on standard error when they notice problems.
+
+
+- `If MALLOC_CHECK_ is set to 1 (one)` , the memory management functions print out warning messages on standard error when they notice problems.
 It is useful if we are not aware of any problems and just want to be notified if any problem exist.
-If MALLOC_CHECK_ is set to 2 (two) , the memory management functions call abort() when they notice problems.
+
+
+- `If MALLOC_CHECK_ is set to 2 (two)` , the memory management functions call abort() when they notice problems.
 This is most useful from inside the debugger or a shell starting an application or daemon, because it allows you to get a backtrace as soon as the memory management functions discover the error, which will get us closest to the point at which the error has happened .
 It is useful if we get a core caused by a memory corruption, we would have more information about memory allocation therefore, making things better for troubleshooting where we need to find out which application overwrote a memory address.
 We can still combine settings 1 and 2 and MALLOC_CHECK_ is set to 3 (three) , where it will print out the warning messages on standard error (1) and will call abort() when problems are noticed (2) .  
