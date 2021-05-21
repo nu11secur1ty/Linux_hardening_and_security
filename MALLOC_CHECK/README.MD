@@ -65,3 +65,8 @@ export MALLOC_CHECK_ = 2
 userID = `id`
 ...
 This setting should be used for debugging purposes only . Due to the performance hit caused by MALLOC_CHECK_ ( which could be up to 30% in some cases ), it is recommended to comment it out as soon as the needed core file is taken.
+
+## Permanent setup
+```bash
+echo "export MALLOC_CHECK_=0" >> /etc/profile
+```
