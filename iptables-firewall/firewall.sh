@@ -66,7 +66,8 @@ iptables -A OUTPUT -p tcp -m tcp ! --tcp-flags SYN,RST,ACK SYN -m state --state 
 # ESTABLISHED,RELATED (OUT)
 iptables -A OUTPUT  -m state --state ESTABLISHED,RELATED  -j ACCEPT
 #######################################################
-# ALLOW ONLY
+# ALLOW ONLY ZONE
+
 ## repeat this section for multiple IPs
 SERVER_IP="192.168.1.1" #the IP you want to allow for this machine
 iptables -A INPUT  -p tcp -s $SERVER_IP -m tcp --dport 4443 -j ACCEPT
