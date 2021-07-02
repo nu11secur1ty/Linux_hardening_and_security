@@ -1,4 +1,5 @@
 #!/usr/bin/bash
+# @nu11secur1ty 2021
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin
 
 # IPv6
