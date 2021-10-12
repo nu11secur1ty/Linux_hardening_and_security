@@ -21,6 +21,10 @@ print color('reset');
 
 # wifi network interfaces
 my $wifi_net = `lshw -c network 2>&1 | grep wireless | grep driver`;
+  if($wifi_net eq wireless){
   print "$wifi_net\n";
+  }else{
+    print "WIFI module not found";
+    }
     
     exit 0;
