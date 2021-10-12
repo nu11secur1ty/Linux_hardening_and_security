@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-use warning;
+use warnings;
 use strict;
 use diagnostics;
 
