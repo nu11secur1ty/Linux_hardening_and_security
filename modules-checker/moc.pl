@@ -5,6 +5,8 @@ use strict;
 use diagnostics;
 
 print"Network modules\n";
-my $call_net = `lshw -c network`;
-  print "$call_net\n";
+my $all_net = `lshw -c network`;
+my $wifi_net = `lshw -c network 2>&1 | grep wireless | grep driver`;
+  print "$all_net\n";
+  print "$wifi_net\n";
   exit 0;
